@@ -1,0 +1,255 @@
+extends pug/layout
+
+block variables
+  -
+    let page = {
+      title: 'Бифлекс матовый - Fanttex',
+      name: 'product',
+      type: 'mobile'
+    };
+
+block content
+  section.product
+    div.container
+      div.product__top
+        nav.breadcrumbs
+          ul.breadcrumbs__list(itemscope itemtype="http://schema.org/BreadcrumbList")
+            li.visually-hidden(itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem")
+              a.visually-hidden(href="./catalog-mobile.html" itemprop="item") <span itemprop="name">Ткани оптом</span>
+              meta(itemprop="position" content="1")
+            li.visually-hidden(itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem")
+              a.visually-hidden(href="./catalog-mobile.html" itemprop="item") <span itemprop="name">Костюмные ткани</span>
+              meta(itemprop="position" content="2")
+            li.breadcrumbs__item(itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem")
+              a.breadcrumbs__link(href="./catalog-mobile.html" itemprop="item") <span itemprop="name">Костюмная клетка</span>
+              meta(itemprop="position" content="3")
+
+        nav.product__nav
+          ul.product__nav-list
+            li.product__nav-item
+              a.product__nav-link(class="product__nav-link--prev" href="./product-2-mobile.html") Предыдущий товар
+            li.product__nav-item
+              a.product__nav-link(class="product__nav-link--next" href="./product-2-mobile.html") Следующий товар
+
+      div.product__main(itemscope itemtype="http://schema.org/Product")
+        div.product__gallery
+          div.product__gallery-inner(class="swiper-container")
+            div.product__gallery-list(class="swiper-wrapper")
+              div.product__gallery-image(class="swiper-slide")
+                a(href="img/product_01-image-full-01.jpg" data-size="1500x999" data-no-swup)
+                  div(itemprop="image" itemscope itemtype="https://schema.org/ImageObject")
+                    img.lozad(src="img/product_01-image-330-01.jpg" srcset="img/placeholder-3x3.svg 330w" sizes="330px" data-srcset="img/product_01-image-330-01.jpg 330w" alt="Бифлекс матовый" title="Бифлекс матовый" width="330" height="330" loading="lazy" decoding="async" itemprop="contentUrl")
+                    meta(itemprop="datePublished" content="2020-11-23")
+                    meta(itemprop="author" content="FANNTEX — ткани для одежды оптом и в нарезку")
+              div.product__gallery-image(class="swiper-slide")
+                a(href="img/product_01-image-full-02.jpg" data-size="1500x999" data-no-swup)
+                  div(itemprop="image" itemscope itemtype="https://schema.org/ImageObject")
+                    img.lozad(src="img/product_01-image-330-02.jpg" srcset="img/placeholder-3x3.svg 330w" sizes="330px" data-srcset="img/product_01-image-330-02.jpg 330w" alt="Бифлекс матовый" title="Бифлекс матовый" width="330" height="330" loading="lazy" decoding="async" itemprop="contentUrl")
+                    meta(itemprop="datePublished" content="2020-11-23")
+                    meta(itemprop="author" content="FANNTEX — ткани для одежды оптом и в нарезку")
+              div.product__gallery-image(class="swiper-slide")
+                a(href="img/product_01-image-full-03.jpg" data-size="1500x999" data-no-swup)
+                  div(itemprop="image" itemscope itemtype="https://schema.org/ImageObject")
+                    img.lozad(src="img/product_01-image-330-03.jpg" srcset="img/placeholder-3x3.svg 330w" sizes="330px" data-srcset="img/product_01-image-330-03.jpg 330w" alt="Бифлекс матовый" title="Бифлекс матовый" width="330" height="330" loading="lazy" decoding="async" itemprop="contentUrl")
+                    meta(itemprop="datePublished" content="2020-11-23")
+                    meta(itemprop="author" content="FANNTEX — ткани для одежды оптом и в нарезку")
+          button.product__add-favorites(type="button" title="Добавить в избранное")
+            span.visually-hidden Добавить в избранное
+
+        div.product__content
+          div.product__content-top
+            p.product__id Артикул: <span itemprop="sku">01.125.00-02</span>
+            div.share
+              div.share__dropdown
+                button.share__toggle(type="button" title="Поделиться")
+                  span.visually-hidden Поделиться
+                div.share__list(class="social social--share")
+                  ul.social__list
+                    li.social__item
+                      a.social__link(class="social__link--vk" href="javascript:void(0)" onclick="window.open('http://vk.com/share.php?url=https://fanttex.webcreator.top/product-mobile.html&title=Бифлекс матовый&description=link+from+fanttex.webcreator.top&noparse=true', '', 'scrollbars=1'); return false;" data-no-swup)
+                        span Вконтакте
+                    li.social__item
+                      a.social__link(class="social__link--fb" href="javascript:void(0)" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https://fanttex.webcreator.top/product-mobile.html&title=Бифлекс матовый&quote=link+from+fanttex.webcreator.top&description=link+from+fanttex.webcreator.top', '', 'scrollbars=1');return false;" data-no-swup)
+                        span Facebook
+                    li.social__item
+                      a.social__link(class="social__link--tw" href="javascript:void(0)" onclick="window.open('http://twitter.com/share?text=https://fanttex.webcreator.top/product-mobile.html', '', 'scrollbars=1'); return false;" data-no-swup)
+                        span Twitter
+                    li.social__item
+                      a.social__link(class="social__link--tg" href="javascript:void(0)" onClick="window.open('https://telegram.me/share/url?url=https://fanttex.webcreator.top/product-mobile.html','','scrollbars=1'); return false;" data-no-swup)
+                        span Telegram
+                    li.social__item
+                      a.social__link(class="social__link--ok" href="javascript:void(0)" onclick="window.open('https://connect.ok.ru/offer?url=https://fanttex.webcreator.top/product-mobile.html', '', 'scrollbars=1'); return false;" data-no-swup)
+                        span Одноклассники
+                    li.social__item
+                      a.social__link(class="social__link--mail" href="mailto:?subject=Поделиться ссылкой на страницу&amp;body=https://fanttex.webcreator.top/product-mobile.html" data-no-swup)
+                        span Почта
+                    li.social__item
+                      a.social__link(class="social__link--link" href="#" data-clipboard="https://fanttex.webcreator.top/product-mobile.html" data-no-swup)
+                        span Скопировать ссылку
+
+          div.product__title
+            h1.h2(itemprop="name") Бифлекс матовый
+            p.text-small Альтернативные названия ткани:
+            h2.product__title-alt <span itemprop="alternateName">Лайкра</span>
+            meta(itemprop="category" content="Ткани оптом")
+            meta(itemprop="color" content="Бежевый, Телесный")
+            meta(itemprop="description" content="Описание товара")
+            meta(itemprop="brand" content="FANTTEX")
+
+          div.product__content-main
+            div.product__add(itemprop="offers" itemscope itemtype="https://schema.org/AggregateOffer")
+              meta(itemprop="lowPrice" content="383.79")
+              meta(itemprop="priceCurrency" content="RUR")
+              meta(itemprop="offerCount" content="5")
+              div.selection(class="selection--color selection--product")
+                div.selection__dropdown
+                  div.selection__field
+                    button.selection__toggle(class="selection__item" type="button")
+                      span.selection__item-info
+                        span.selection__item-color(style="color: #f1d6c7;")
+                        span.selection__item-description
+                          h3.selection__item-name Бежевый, Телесный
+                          span.selection__item-availability В наличии
+                  div.selection__list
+                    div.selection__search
+                      input(type="search" placeholder="Поиск по цвету" aria-label="Поиск по цвету")
+                    div.selection__list-inner
+                      a.selection__item(href="#" data-no-swup)
+                        span.selection__item-info
+                          span.selection__item-color(style="color: #f1d6c7;")
+                          span.selection__item-description
+                            span.selection__item-name Бежевый, Телесный
+                            span.selection__item-availability В наличии
+                      a.selection__item(href="#" data-no-swup)
+                        span.selection__item-info
+                          span.selection__item-color(style="color: #000000;")
+                          span.selection__item-description
+                            span.selection__item-name Черный
+                            span.selection__item-availability В наличии
+                      a.selection__item(href="#" data-no-swup)
+                        span.selection__item-info
+                          span.selection__item-color(style="color: #ffffff;")
+                          span.selection__item-description
+                            span.selection__item-name Белый, Молочный
+                            span.selection__item-availability(class="selection__item-availability--not-available") Закончился
+
+              div.product__price(class="product__price--per-item" itemprop="offers" itemscope itemtype="https://schema.org/Offer")
+                p.text-small Оптовая цена за метр:
+                p.product__price-per-item <span class="price-per-item" itemprop="price" content="412.67"><span class="price-integer">412</span><sup class="price-fraction">67</sup></span> <span itemprop="priceCurrency" content="RUR">руб.</span>/м <span class="price-discount-percent"></span>
+
+              div.product-amount(class="minimum")
+                div.product-amount__dropdown
+                  div.product-amount__field
+                    input(type="text" name="amount" data-min="25" data-max="1000" data-unit="м" spellcheck="false" title="Количество ткани" aria-label="Количество ткани")
+                    div.product-amount__control
+                      button.product-amount__button-remove(type="button" title="Удалить из корзины")
+                        span.visually-hidden Удалить из корзины
+                      button.product-amount__button-decrease(type="button" title="Уменьшить количество")
+                        span.visually-hidden Уменьшить количество
+                      button.product-amount__button-increase(type="button" title="Увеличить количество")
+                        span.visually-hidden Увеличить количество
+                  div.product-amount__list
+                    button.product-amount__button-remove-cart(type="button") Удалить из корзины
+                    div.product-amount__inner
+                      p.product-amount__list-title
+                        span Длина
+                        span Цена за 1 м
+                      div.product-amount__options
+                        a.product-amount__option(href="#" data-no-swup)
+                          span.product-amount__quantity 5 м
+                          span.product-amount__price 433<sup>30</sup> руб.
+                          span.product-amount__discount +5%
+                        a.product-amount__option(href="#" data-no-swup)
+                          span.product-amount__quantity 25 м
+                          span.product-amount__price 412<sup>67</sup> руб.
+                        a.product-amount__option(href="#" data-no-swup)
+                          span.product-amount__quantity 100 м
+                          span.product-amount__price 400<sup>30</sup> руб.
+                          span.product-amount__discount -3%
+                        a.product-amount__option(href="#" data-no-swup)
+                          span.product-amount__quantity 300 м
+                          span.product-amount__price 392<sup>04</sup> руб.
+                          span.product-amount__discount -5%
+                        a.product-amount__option(href="#" data-no-swup)
+                          span.product-amount__quantity 500 м
+                          span.product-amount__price 383<sup>79</sup> руб.
+                          span.product-amount__discount -7%
+
+              div.product__price(class="product__price--full")
+                p.text-small Общая цена с учетом выбранной длины:
+                h4.product__price-full <span class="price-total"><span class="price-integer">10 316</span><sup class="price-fraction">75</sup></span> руб.
+                p.text-small(class="product__price-profit") вместо <span class="price-no-discount"><span class="price-integer">10 316</span><sup class="price-fraction">75</sup></span> руб., экономия <span class="price-discount-value"><span class="price-integer">00</span><sup class="price-fraction">00</sup></span> руб.
+
+              div.product__buttons
+                button.button(class="button--final product__add-cart" type="button") В корзину
+                a.button(class="button--selection product__link-cart" href="./cart-mobile.html") Перейти в корзину
+
+            div.product__info
+              div.product__description
+                p.text-small(class="slicing") Нарезка: <span class="item-value">Нет. Продажа от рулона (25 м)</span>
+                p.text-small(class="quantity-in-item") В рулоне: <span class="item-value">25-30 м</span>
+                p.text-small(class="width") Ширина: <span class="item-value">1,5 м</span>
+                p.text-small(class="density") Плотность: <span class="item-value">250 гр/м2</span>
+                p.text-small(class="composition") Состав: <span class="item-value" itemprop="material">Нейлон — 80%, Лайкра — 20%</span>
+                p.text-small(class="country") Страна производства: <span class="item-value">Китай</span>
+                p.text-small(class="stock") Склад: <span class="item-value">Новосибирск, Москва</span>
+                p.text-small(class="comment") Комментарий: <span class="item-value">В 1 кг ровно 20 м, но вы можете взять не 1 кг, а сколько угодно кг</span>
+
+              ul.product__links
+                li.product__link(class="product__link--download-photos")
+                  a(href="#" download data-no-swup) Сохранить фотографии ткани
+                li.product__link(class="product__link--add-sample")
+                  a(href="#" data-no-swup) Заказать образцы ткани
+                li.product__link(class="product__link--link-cart")
+                  a(href="./cart-mobile.html" data-no-swup) Образцы ткани уже в корзине
+                li.product__link(class="product__link--ask")
+                  a(href="#askQuestion") Задать вопрос о ткани
+                li.product__link(class="product__link--sent-photos")
+                  a(href="#" data-no-swup) Прислать фотографии изделия
+                li.product__link(class="product__link--other-variants" )
+                  a(href="#otherVariants") Другие цвета и оттенки
+
+  section.catalog#otherVariants(class="catalog--variants")
+    div.container
+      h2 Другие цвета и оттенки
+
+      div.catalog__list
+        - for (let i = 1; i <= 2; i++)
+          +product-variant({counter: 1, isOutOfStock: true})
+
+          +product-variant({counter: 2, name: 'Черный'})
+
+          +product-variant({counter: 3, name: 'Бежевый, Телесный', isInCart: true})
+
+          +product-variant({counter: 1, isNew: true, discount: 36})
+
+  section.form-section#askQuestion
+    div.container
+      h2 Задать вопрос о ткани
+      form.ask-question(class="form" action="#" method="post")
+        div.ask-question__cols
+          div.ask-question__col
+            label.ask-question__field(class="form-field")
+              input(type="text" name="name" aria-label="Введите ваше имя" required)
+              span Имя
+            label.ask-question__field(class="form-field")
+              input(type="email" name="email" aria-label="Введите ваш e-mail" required)
+              span Почта
+            label.ask-question__field(class="form-field")
+              input(type="tel" name="phone" aria-label="Введите ваш телефон" required)
+              span Телефон
+          div.ask-question__col
+            label.ask-question__field(class="form-field")
+              textarea(name="message" aria-label="Введите ваш вопрос" required)
+              span Вопрос
+            div.ask-question__checks
+              label.ask-question__check(class="form-check privacy filled")
+                input(type="checkbox" name="privacyAccepted" checked required)
+                span Я даю согласие на обработку персональных данных
+              label.ask-question__check(class="form-check sign-up filled")
+                input(type="checkbox" name="signUp" checked required)
+                span Зарегистрироваться на сайте одновременно с отправкой вопроса
+            div.ask-question__buttons
+              button.button(class="button--final ask-question__submit" type="submit") Отправить
+
+      +pagination()

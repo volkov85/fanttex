@@ -1,0 +1,9 @@
+div.popup(class=`popup--${variant}`)
+  if variant === 'subscription-authorization'
+    include popup-subscription-authorization
+
+  if variant === 'product'
+    include popup-product
+
+  if variant === 'verification'
+    include popup-verification

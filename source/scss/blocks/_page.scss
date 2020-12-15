@@ -1,0 +1,29 @@
+.page {
+  min-width: $widthDesktopSmall;
+  margin: 0;
+  overflow: hidden auto;
+  font: #{$fontTextRegular}/#{$lineHeightHuge} $fontBase;
+  color: $fontColorMaintext;
+  background-color: $ColorPrimary;
+
+  &--catalog {
+    h1 {
+      margin-bottom: 17px;
+    }
+  }
+
+  &--cart {
+    overflow: initial;
+  }
+
+  &--dashboard-order-edit {
+    overflow: initial;
+  }
+
+  &--block {
+    position: fixed;
+    right: 0;
+    left: 0;
+    overflow-y: scroll !important;
+  }
+}

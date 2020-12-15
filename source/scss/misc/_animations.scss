@@ -1,0 +1,29 @@
+@keyframes move-down {
+  from {
+    transform: translateY(-200%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes move-right {
+  from {
+    transform: translateX(-200%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

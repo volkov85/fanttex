@@ -1,0 +1,179 @@
+.select {
+  position: relative;
+  width: 200px;
+  height: 36px;
+
+  &--large {
+    width: 270px;
+    height: 70px;
+  }
+
+  &--huge {
+    width: 100%;
+    height: 72px;
+  }
+
+  &.opened {
+    z-index: 3;
+  }
+}
+
+.select__toggle {
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
+  width: 100%;
+  height: 36px;
+  padding: 11px 34px 11px 20px;
+  overflow: hidden;
+  font-size: $fontTextSmall;
+  line-height: $lineHeightNormal;
+  text-align: left;
+  color: inherit;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  background-color: $ColorInput;
+  border: 1px solid transparent;
+  cursor: pointer;
+  appearance: none;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 9px;
+    height: 9px;
+    top: 14px;
+    right: 13px;
+    background: url("../img/icon-arrow-dropdown.svg") center / contain no-repeat;
+    transition: transform 0.3s;
+  }
+
+  .select--large & {
+    height: 70px;
+    padding: 24px 50px 24px 30px;
+
+    &::before {
+      top: 31px;
+      right: 20px;
+    }
+  }
+
+  .select--huge & {
+    height: 72px;
+    padding: 25px 50px 25px 30px;
+    font-size: $fontTextRegular;
+
+    &::before {
+      top: 32px;
+      right: 23px;
+    }
+  }
+
+  .select--billing-profile & {
+    &::before {
+      content: none;
+    }
+  }
+
+  .opened & {
+    background: none;
+    border-color: transparent;
+
+    &::before {
+      transform: rotate(-180deg);
+    }
+  }
+
+  .selected & {
+    background-color: $ColorSelected;
+    border-color: $ColorBorder;
+  }
+
+  .select--billing-profile.selected & {
+    background-color: $ColorInput;
+    border-color: transparent;
+  }
+
+  &:hover,
+  &:focus {
+    outline: none;
+  }
+}
+
+.select__list {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  display: none;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding-top: 36px;
+  background-color: $ColorPrimary;
+  border: 1px solid $ColorBorderGrey;
+  box-shadow: 0 0 9px 1px $ColorShadow;
+
+  .select--large & {
+    padding-top: 70px;
+  }
+
+  .select--huge & {
+    max-height: 290px;
+    padding-top: 72px;
+    overflow: hidden;
+  }
+
+  .select--huge.opened & {
+    display: block;
+  }
+
+  .opened & {
+    display: flex;
+  }
+}
+
+.select__list-inner {
+  display: flex;
+  flex-direction: column;
+  max-height: 288px - 72px;
+  overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-color: $ColorScrollbar $ColorPrimary;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+
+  &::-webkit-scrollbar {
+    width: 13px;
+    background-color: $ColorPrimary;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    height: 50%;
+    background-color: $ColorScrollbar;
+  }
+}
+
+.select__option {
+  flex-shrink: 0;
+  padding: 11px 20px;
+  font-size: $fontTextSmall;
+  line-height: $lineHeightNormal;
+  color: $fontColorMaintext;
+
+  .select--large & {
+    padding: 28px 30px;
+  }
+
+  .select--huge & {
+    overflow: hidden;
+    padding: 28px 30px;
+    font-size: $fontTextRegular;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: $ColorSelected;
+    outline: none;
+  }
+}

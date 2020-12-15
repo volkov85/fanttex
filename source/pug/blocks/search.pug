@@ -1,0 +1,87 @@
+div.search(class=page.name === 'search' ? 'filled' : '')
+  div.search__dropdown
+    form.search__field(action="#" method="get" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction")
+      link(itemprop="target" href="./search.html?q={query}")
+      input(type="search" name="search" value=page.name === 'search' ? 'Штапель' : false placeholder="Поиск по каталогу тканей" spellcheck="false" aria-label="Поиск по каталогу тканей" itemprop="query")
+      div.search__control
+        button.search__button-find(type="submit" title="Найти")
+          span.visually-hidden Найти
+        button.search__button-remove(type="reset" title="Очистить строку поиска")
+          span.visually-hidden Очистить строку поиска
+
+    div.search__list
+      div.search__list-inner
+        div.search__list-scrollable
+          div.search__options(class="search__options--history")
+            span.search__options-title История поиска
+            div.search__options-list
+              div.search__item
+                a.search__item-text(href="#" data-no-swup) Евро ангора
+                button.search__item-remove(type="button") Удалить
+              div.search__item
+                a.search__item-text(href="#" data-no-swup) Замша
+                button.search__item-remove(type="button") Удалить
+              div.search__item
+                a.search__item-text(href="#" data-no-swup) Футер
+                button.search__item-remove(type="button") Удалить
+              div.search__item
+                a.search__item-text(href="#" data-no-swup) Неопрен
+                button.search__item-remove(type="button") Удалить
+              div.search__item
+                a.search__item-text(href="#" data-no-swup) Джинс
+                button.search__item-remove(type="button") Удалить
+
+          div.search__options(class="search__options--popular")
+            span.search__options-title Популярные запросы
+            div.search__options-list
+              div.search__item
+                a.search__item-text(href="#" data-no-swup) Штапель
+              div.search__item
+                a.search__item-text(href="#" data-no-swup) Замша
+              div.search__item
+                a.search__item-text(href="#" data-no-swup) Футер
+              div.search__item
+                a.search__item-text(href="#" data-no-swup) Неопрен
+              div.search__item
+                a.search__item-text(href="#" data-no-swup) Джинс
+
+          div.search__options(class="search__options--categories")
+            span.search__options-title Разделы
+            div.search__options-list
+              div.search__item
+                a.search__item-text(href=`catalog${page.type === 'mobile' ? '-mobile' : ''}.html` data-no-swup) Костюмные ткани
+              div.search__item
+                a.search__item-text(href=`catalog${page.type === 'mobile' ? '-mobile' : ''}.html` data-no-swup) Костюмная клетка
+              div.search__item
+                a.search__item-text(href=`catalog${page.type === 'mobile' ? '-mobile' : ''}.html` data-no-swup) Костюмная T/R
+
+          div.search__options(class="search__options--fabrics")
+            span.search__options-title Ткани
+            div.search__options-list
+              a.search__product(href=`./product${page.type === 'mobile' ? '-mobile' : ''}.html`)
+                img.search__product-image(class="lozad" src="img/product_01-search-thumb.jpg" srcset="img/placeholder-3x3.svg 75w" sizes="75px" data-srcset="img/product_01-search-thumb.jpg 75w" alt="Костюмная T/R «Хлоя», цвет: бежевый" width="75" height="75" loading="lazy" decoding="async")
+                div.search__product-info
+                  p.search__product-id 001.0209.0000
+                  p.search__product-title Костюмная T/R «Хлоя», цвет: бежевый
+                  p.search__product-price от 332<sup>36</sup> руб./м
+              a.search__product(href=`./product${page.type === 'mobile' ? '-mobile' : ''}.html`)
+                img.search__product-image(class="lozad" src="img/product_01-search-thumb.jpg" srcset="img/placeholder-3x3.svg 75w" sizes="75px" data-srcset="img/product_01-search-thumb.jpg 75w" alt="Костюмная T/R «Хлоя», цвет: бежевый" width="75" height="75" loading="lazy" decoding="async")
+                div.search__product-info
+                  p.search__product-id 001.0209.0000
+                  p.search__product-title Костюмная T/R «Хлоя», цвет: бежевый
+                  p.search__product-price от 332<sup>36</sup> руб./м
+              a.search__product(href=`./product${page.type === 'mobile' ? '-mobile' : ''}.html`)
+                img.search__product-image(class="lozad" src="img/product_01-search-thumb.jpg" srcset="img/placeholder-3x3.svg 75w" sizes="75px" data-srcset="img/product_01-search-thumb.jpg 75w" alt="Костюмная T/R «Хлоя», цвет: бежевый" width="75" height="75" loading="lazy" decoding="async")
+                div.search__product-info
+                  p.search__product-id 001.0209.0000
+                  p.search__product-title Костюмная T/R «Хлоя», цвет: бежевый
+                  p.search__product-price от 332<sup>36</sup> руб./м
+              a.search__product(href=`./product${page.type === 'mobile' ? '-mobile' : ''}.html`)
+                img.search__product-image(class="lozad" src="img/product_01-search-thumb.jpg" srcset="img/placeholder-3x3.svg 75w" sizes="75px" data-srcset="img/product_01-search-thumb.jpg 75w" alt="Костюмная T/R «Хлоя», цвет: бежевый" width="75" height="75" loading="lazy" decoding="async")
+                div.search__product-info
+                  p.search__product-id 001.0209.0000
+                  p.search__product-title Костюмная T/R «Хлоя», цвет: бежевый
+                  p.search__product-price от 332<sup>36</sup> руб./м
+
+      div.search__list-bottom
+        a.search__show-all(href=`./search${page.type === 'mobile' ? '-mobile' : ''}.html`) Открыть все результаты поиска

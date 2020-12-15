@@ -1,0 +1,42 @@
+.ask-question__cols {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ask-question__col {
+  width: 420px;
+
+  @media (min-width: $widthDesktop) {
+    width: 570px;
+  }
+
+  @media (min-width: $widthDesktopWide) {
+    &:last-child {
+      width: 870px;
+    }
+  }
+}
+
+.ask-question__field {
+  margin-top: 20px;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+.ask-question__checks {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.ask-question__check {
+  margin-bottom: 10px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

@@ -1,0 +1,113 @@
+section.cart(class="cart--edit processing")
+  div.cart__main
+    h2.cart__title Заказ № 15616 от 31.08.2020
+    p.cart__status Получен, обрабатывается менеджером
+
+    div.cart__cols
+      div.cart__content
+        div.cart__products
+          div.cart__products-header
+            p.text-small Ткань
+            p.text-small Количество
+            p.text-small Общая
+
+          div.cart__list
+            - for (let i = 0; i < 2; i++)
+              +product-cart()
+
+              +product-cart({name: 'Футер 3х-нитка, петля-диагональ, Пенье, вторая строка'})
+
+              +product-cart({name: 'Футер 3х-нитка, петля-диагональ, Пенье, вторая строка', id: '01.125.00-02-ОБРАЗЕЦ', price: '150.00', isSample: true})
+
+        div.cart-form
+          div.billing-profile
+            div.billing-profile__select
+              div.select(class="select--huge select--cart")
+                div.select__dropdown
+                  button.select__toggle(type="button") Выберите платежный профиль или создайте новый
+                  div.select__list
+                    div.select__list-inner
+                      a.select__option(class="not-selectable" href="#" data-no-swup) Создать новый платежный профиль
+                      a.select__option(href="#" data-no-swup) Физическое лицо, Иван Иванович Иванов, 71231231212, pochta@mail
+                      a.select__option(href="#" data-no-swup) ООО “Общество”, Иван Иванович Иванов, ИНН 123456789, КПП 1234561
+                      a.select__option(href="#" data-no-swup) Физическое лицо, Пётр Петрович Петров, 71231231212, pochta@mail
+                      a.select__option(href="#" data-no-swup) ООО “Общество”, Пётр Петрович Петров, ИНН 123456789, КПП 1234561
+
+            form.billing-profile__form#orderEditForm(class="form" action="#" method="post")
+              div.billing-profile__toggles
+                label.toggle(class="billing-profile__toggle")
+                  input(type="radio" name="profileType" value="individual" checked)
+                  span Физическое лицо
+                label.toggle(class="billing-profile__toggle")
+                  input(type="radio" name="profileType" value="entity")
+                  span Юридическое лицо
+
+              div.billing-profile__form-fields
+                label.billing-profile__form-field(class="form-field")
+                  input(type="text" name="name" aria-label="Введите ваше имя" required)
+                  span Имя
+                label.billing-profile__form-field(class="form-field")
+                  input(type="text" name="surname" aria-label="Введите вашу фамилию" required)
+                  span Фамилия
+                label.billing-profile__form-field(class="form-field")
+                  input(type="text" name="middleName" aria-label="Введите ваше отчество" required)
+                  span Отчество
+                label.billing-profile__form-field(class="form-field")
+                  input(type="tel" name="phone" aria-label="Введите ваш телефон" required)
+                  span Телефон
+                label.billing-profile__form-field(class="form-field")
+                  input(type="email" name="email" aria-label="Введите ваш e-mail" required)
+                  span Email
+                label.billing-profile__form-field(class="form-field")
+                  input(type="text" name="address" aria-label="Введите ваш адрес" required)
+                  span Адрес доставки
+
+          div.cart-form__col
+            div.cart-form__fieldset
+              p.h5 Выберите доставку:
+              div.cart-form__toggles
+                label.toggle(class="cart-form__toggle")
+                  input(type="radio" name="deliveryMethod" value="transportCompany" form="orderEditForm" checked)
+                  span Доставка до транспортной компании
+                label.toggle(class="cart-form__toggle")
+                  input(type="radio" name="deliveryMethod" value="stockNovosibirsk" form="orderEditForm")
+                  span Самовывоз со склада в Новосибирске
+
+            div.cart-form__fieldset
+              p.h5 Выберите способ оплаты:
+              div.cart-form__toggles
+                label.toggle(class="cart-form__toggle")
+                  input(type="radio" name="paymentMethod" value="invoice" form="orderEditForm" checked)
+                  span Выставить счет
+                label.toggle(class="cart-form__toggle")
+                  input(type="radio" name="paymentMethod" value="yandex" form="orderEditForm")
+                  span Оплатить через Яндекс.Кассу
+
+      div.cart__sidebar
+        div.cart__sidebar-widget
+          div.cart__price
+            div.cart__price-block
+              p Доставка:
+              p.cart__price-in-progress Рассчитывается менеджером
+            div.cart__price-block
+              p Ткани:
+              p <span class="price-current"><span class="price-integer">160 420</span><sup class="price-fraction">00</sup></span> руб.
+            div.cart__price-block(class="cart__price-block--total")
+              p Итого:
+              p <span class="price-total"><span class="price-integer">160 420</span><sup class="price-fraction">00</sup></span> руб.
+            p.text-small Вместо <span class="price-no-discount"><span class="price-integer">173 620</span><sup class="price-fraction">00</sup></span> руб.
+            p.text-small Экономия <span class="price-discount-value"><span class="price-integer">12 900</span><sup class="price-fraction">00</sup></span> руб.
+
+          div.cart__buttons
+            a.button(class="button--final cart__payment" href="#" data-no-swup) Оплатить
+            button.button(class="button--selection cart__save" type="submit" form="orderEditForm") Сохранить заказ
+            a.button(class="button--cancel cart__cancel" href=`./order-cancel${page.type === 'mobile' ? '-mobile' : ''}.html`) Отменить заказ
+
+          div.cart__dropdown
+            div.select(class="select--large cart__output not-selectable")
+              div.select__dropdown
+                button.select__toggle(type="button") Скачать или распечатать
+                div.select__list
+                  a.select__option(href="#" download data-no-swup) Скачать в формате XLSX
+                  a.select__option(href="#" download data-no-swup) Скачать в формате PDF
+                  a.select__option(href="#" data-no-swup) Распечатать

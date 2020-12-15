@@ -1,0 +1,40 @@
+div.billing-profile(class="billing-profile--dashboard")
+  div.billing-profile__select
+    div.select(class="select--huge select--cart" class=page.type === 'desktop' ? 'select--billing-profile opened' : false)
+      div.select__dropdown
+        button.select__toggle(type="button") Выберите платежный профиль#{page.type === 'desktop' ? ' или создайте новый' : ''}
+        div.select__list
+          div.select__list-inner
+            a.select__option(class="not-selectable" href="#" data-no-swup) Создать новый платежный профиль
+            - for (let i = 0; i < 10; i++)
+              a.select__option(href="#" data-no-swup) Физическое лицо, Иван Иванович Иванов, 71231231212, pochta@mail
+              a.select__option(href="#" data-no-swup) ООО “Общество”, Иван Иванович Иванов, ИНН 123456789, КПП 1234561
+
+  form.billing-profile__form(class="form" action="#" method="post")
+    div.billing-profile__toggles
+      label.toggle(class="billing-profile__toggle")
+        input(type="radio" name="profileType" value="individual" checked)
+        span Физическое лицо
+      label.toggle(class="billing-profile__toggle")
+        input(type="radio" name="profileType" value="entity")
+        span Юридическое лицо
+
+    div.billing-profile__form-fields
+      label.billing-profile__form-field(class="form-field")
+        input(type="text" name="name" aria-label="Введите ваше имя" required)
+        span Имя
+      label.billing-profile__form-field(class="form-field")
+        input(type="text" name="surname" aria-label="Введите вашу фамилию" required)
+        span Фамилия
+      label.billing-profile__form-field(class="form-field")
+        input(type="text" name="middleName" aria-label="Введите ваше отчество" required)
+        span Отчество
+      label.billing-profile__form-field(class="form-field")
+        input(type="tel" name="phone" aria-label="Введите ваш телефон" required)
+        span Телефон
+      label.billing-profile__form-field(class="form-field")
+        input(type="email" name="email" aria-label="Введите ваш e-mail" required)
+        span Email
+      label.billing-profile__form-field(class="form-field")
+        input(type="text" name="address" aria-label="Введите ваш адрес" required)
+        span Адрес доставки

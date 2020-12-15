@@ -1,0 +1,44 @@
+.breadcrumbs {
+  margin-top: 25px;
+  margin-bottom: 30px;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  .product & {
+    max-width: 570px;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+.breadcrumbs__list {
+  @extend %list-reset;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -10px;
+}
+
+.breadcrumbs__item {
+  margin-top: 5px;
+  font-size: $fontTextSmall;
+  line-height: $lineHeightNormal;
+  color: $fontColorGrey;
+
+  &::after {
+    content: "/";
+  }
+}
+
+.breadcrumbs__link {
+  margin-right: 10px;
+  margin-left: 10px;
+  line-height: $lineHeightNormal;
+
+  &:hover,
+  &:focus {
+    color: $ColorButtonOrange;
+    outline: none;
+  }
+}

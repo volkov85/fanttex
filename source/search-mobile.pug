@@ -1,0 +1,42 @@
+extends pug/layout
+
+block variables
+  -
+    let page = {
+      title: 'Результаты поиска - Fanttex',
+      name: 'search',
+      type: 'mobile'
+    };
+
+block content
+  section.catalog
+    div.container
+      h1.text-small По запросу “<i class="search-query">штапель</i>” в каталоге <span class="search-count">135</span> тканей
+
+      block filters
+        +filters('sorting')
+
+      div.catalog__list
+        +product-card({counter: 1, imagesQuantity: 2, variantsQuantity: 20, variantSelected: 13, isFavorite: true})
+
+        +product-card({counter: 2, name: 'Костюмная T/R «Хлоя»', id: '01.209.000', price: '332.36', variantSelected: 6, isInCart: true, isNew: true})
+
+        +product-card({counter: 3, name: 'Костюмная T/R', id: '01.209.000', price: '332.36', priceSale: '151.18', imagesQuantity: 4, unit: 'кг', variantSelected: 3, isInCart: true, isNew: true, discount: 36})
+
+        +product-card({counter: 4, name: 'Пайетки на трикотаже, двусторонние, матовые', id: '01.209.000', price: '332.36', priceSale: '151.18', variantSelected: 9, discount: 36})
+
+        +product-card({counter: 5, isOutOfStock: true})
+
+        +product-card({counter: 6})
+
+      nav.menu-catalog(class="menu-catalog--relevant")
+        h2.h5 Похожие запросы:
+        ul.menu-catalog__list
+          li.menu-catalog__item
+            a.menu-catalog__link(href="./catalog-mobile.html") Армани Шелк
+          li.menu-catalog__item
+            a.menu-catalog__link(href="./catalog-mobile.html") Штапель
+          <li class="menu-catalog__item">
+            <a href="./catalog-mobile.html" class="menu-catalog__link">Штапель</a>
+
+      +pagination()

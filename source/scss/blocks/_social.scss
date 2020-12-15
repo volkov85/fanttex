@@ -1,0 +1,171 @@
+.social {
+  @media (min-width: $widthDesktop) {
+    width: 170px;
+
+    &--share {
+      width: auto;
+    }
+
+    &--bind {
+      width: auto;
+    }
+  }
+}
+
+.social__list {
+  @extend %list-reset;
+  display: flex;
+
+  .social--share & {
+    display: block;
+  }
+
+  .social--bind & {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  @media (min-width: $widthDesktop) {
+    display: block;
+  }
+}
+
+.social__item {
+  width: 18px;
+  height: 18px;
+  margin-right: 10px;
+  line-height: $lineHeightNormal;
+
+  .social--share & {
+    width: initial;
+    height: initial;
+    margin-right: 0;
+    margin-bottom: 14px;
+  }
+
+  .social--bind & {
+    width: initial;
+    height: initial;
+    margin-right: 0;
+    margin-bottom: 10px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  @media (min-width: $widthDesktop) {
+    width: initial;
+    height: initial;
+    margin-right: 0;
+    margin-bottom: 14px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.social__link {
+  position: relative;
+  font-size: $fontTextSmall;
+  line-height: $lineHeightNormal;
+  color: $fontColorMaintext;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 18px;
+    height: 18px;
+    background: center / contain no-repeat;
+    filter: brightness(0) invert(1) brightness(0.59);
+  }
+
+  .social--share & {
+    padding-left: 28px;
+  }
+
+  .social--bind & {
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+    min-height: 36px;
+    padding: 10px 20px;
+    padding-left: 50px;
+    background-color: $ColorInput;
+    border: 1px solid transparent;
+
+    &::before {
+      top: 9px;
+      left: 16px;
+    }
+
+    &.linked {
+      padding-right: 55px;
+      color: $fontColorMaintext;
+      background-color: $ColorSelected;
+      border-color: $ColorBorder;
+      pointer-events: none;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: -1px;
+        right: -1px;
+        width: 34px;
+        height: 34px;
+        background: url("../img/icon-cross.svg") center / 8px no-repeat $ColorSelected;
+        border: 1px solid $ColorBorder;
+        pointer-events: auto;
+      }
+
+      &:hover,
+      &:focus {
+        &::before {
+          filter: brightness(0) invert(1) brightness(0.59);
+        }
+      }
+    }
+  }
+
+  &:hover,
+  &:focus {
+    outline: none;
+
+    &::before {
+      filter: none;
+    }
+  }
+
+  @each $social, $color in $fontColorSocials {
+    &--#{$social} {
+      &::before {
+        background-image: url("../img/icon-social-#{$social}.svg");
+      }
+
+      &:hover,
+      &:focus {
+        color: $color;
+      }
+    }
+  }
+
+  @media (max-width: $widthDesktop - 1) {
+    .social:not(.social--share):not(.social--bind) & {
+      span {
+        @include visually-hidden();
+      }
+    }
+  }
+
+  @media (min-width: $widthDesktop) {
+    padding-left: 28px;
+  }
+}

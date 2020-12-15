@@ -1,0 +1,13 @@
+div.popup-form
+  div.popup-form__wrapper
+    div.popup-form__top
+      button.popup-form__close(class="popup__close" type="button") Закрыть
+
+    form.inner-form(class="form" action="#" method="post")
+      div.inner-form__title
+        h2 Введите код подтверждения
+
+      div.inner-form__fields
+        label.inner-form__field(class="form-field")
+          input(type="number" name="verificationCode" aria-label="Введите код подтверждения" required)
+          span Код подтверждения

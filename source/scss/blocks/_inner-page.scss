@@ -1,0 +1,16 @@
+.inner-page {
+  margin-top: 30px;
+  margin-bottom: 60px;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+.inner-page__top {
+  margin-bottom: 30px;
+}
+
+.inner-page__main {
+  margin-bottom: 30px;
+}

@@ -1,0 +1,22 @@
+section.dashboard-panel
+  div.dashboard-panel__top
+    div.select(class="dashboard-panel__status")
+      div.select__dropdown
+        button.select__toggle(type="button" data-value="all") Все текущие заказы
+        div.select__list
+          a.select__option(href="#" data-value="processing" data-no-swup) Получен, обрабатывается менеджером
+          a.select__option(href="#" data-value="awaiting-payment" data-no-swup) Обработан менеджером, ожидается оплата
+          a.select__option(href="#" data-value="paid" data-no-swup) Оплачен, формируется к отправке
+          a.select__option(href="#" data-value="shipped" data-no-swup) Отгружен
+          a.select__option(href="#" data-value="finished" data-no-swup) Выполнен
+
+  div.dashboard-panel__inner
+    +order()(data-aos="fade-in")
+
+    +order({status: 'awaiting-payment', productsQuantity: 8})(data-aos="fade-in")
+
+    +order({status: 'finished'})(data-aos="fade-in")
+
+    +order({status: 'paid', productsQuantity: 2})(data-aos="fade-in")
+
+    +order({status: 'shipped', productsQuantity: 5})(data-aos="fade-in")

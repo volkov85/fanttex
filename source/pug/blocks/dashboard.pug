@@ -1,0 +1,48 @@
+section.dashboard(class=dashboard === 'main' ? 'dashboard--main' : false)
+  div.container
+    header.dashboard__header
+      div.dashboard__top
+        nav.page-nav
+          ul.page-nav__list
+            li.page-nav__item
+              a.page-nav__link(href="javascript:history.back()") Вернуться назад
+
+      h1 Личный кабинет
+
+      nav.dashboard__nav(class="swiper-container")
+        ul.dashboard__nav-list(class="swiper-wrapper")
+          li.dashboard__nav-item(class="swiper-slide" class=dashboard === 'orders' || dashboard === 'order-edit' || dashboard === 'order-cancel' ? 'active' : false)
+            a.dashboard__nav-link(href=`./orders${page.type === 'mobile' ? '-mobile' : ''}.html`) Текущие заказы
+          li.dashboard__nav-item(class="swiper-slide" class=dashboard === 'orders-history' ? 'active' : false)
+            a.dashboard__nav-link(href=`./orders-history${page.type === 'mobile' ? '-mobile' : ''}.html`) История заказов
+          li.dashboard__nav-item(class="swiper-slide" class=dashboard === 'orders-canceled' ? 'active' : false)
+            a.dashboard__nav-link(href=`./orders-canceled${page.type === 'mobile' ? '-mobile' : ''}.html`) Отмененные заказы
+          li.dashboard__nav-item(class="swiper-slide" class=dashboard === 'favorites' ? 'active' : false)
+            a.dashboard__nav-link(href=`./favorites${page.type === 'mobile' ? '-mobile' : ''}.html`) Избранное
+          li.dashboard__nav-item(class="swiper-slide" class=dashboard === 'billing-profiles' ? 'active' : false)
+            a.dashboard__nav-link(href=`./billing-profiles${page.type === 'mobile' ? '-mobile' : ''}.html`) Платежные профили
+          li.dashboard__nav-item(class="swiper-slide" class=dashboard === 'profile' ? 'active' : false)
+            a.dashboard__nav-link(href=`./profile${page.type === 'mobile' ? '-mobile' : ''}.html`) Профиль пользователя
+
+    div.dashboard__main
+      case dashboard
+        when 'orders'
+          include dashboard-orders
+        when 'orders-history'
+          include dashboard-orders-history
+        when 'orders-canceled'
+          include dashboard-orders-canceled
+        when 'favorites'
+          include dashboard-favorites
+        when 'billing-profiles'
+          include dashboard-billing-profiles
+        when 'profile'
+          include dashboard-profile
+        when 'order-edit'
+          include dashboard-order-edit
+        when 'order-cancel'
+          include dashboard-order-cancel
+        default
+          include dashboard-main
+
+    +pagination()

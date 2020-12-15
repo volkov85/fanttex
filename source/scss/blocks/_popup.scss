@@ -1,0 +1,60 @@
+.popup {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  z-index: 15;
+  display: none;
+  box-sizing: border-box;
+  width: 630px;
+  background-color: $ColorPrimary;
+  border: 1px solid $ColorBorderGrey;
+  transform: translate(50%, -50%);
+
+  &.shown {
+    display: block;
+    animation: 0.5s both fade-in;
+  }
+
+  &--product {
+    top: 15px;
+    margin-bottom: 15px;
+    transform: translateX(50%);
+  }
+
+  &--subscription-authorization {
+    transform: translate(50%, -290px);
+  }
+
+  &--verification {
+    width: 430px;
+  }
+
+  @media (min-width: $widthDesktop) {
+    &--product {
+      width: 930px;
+    }
+  }
+
+  @media (min-width: $widthDesktopWide) {
+    &--product {
+      width: 1230px;
+    }
+  }
+}
+
+button.popup__close {
+  padding: 0;
+  font-size: $fontTextSmall;
+  line-height: $lineHeightNormal;
+  color: $fontColorGrey;
+  background: none;
+  border: none;
+  cursor: pointer;
+  appearance: none;
+
+  &:hover,
+  &:focus {
+    color: $ColorButtonOrange;
+    outline: none;
+  }
+}

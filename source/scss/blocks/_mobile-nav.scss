@@ -1,0 +1,20 @@
+.mobile-nav {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 15;
+  box-sizing: border-box;
+  min-height: 72px;
+  padding-top: 17px;
+  padding-bottom: 17px;
+  background-color: $ColorPrimary;
+  box-shadow: 0 10px 50px rgba($fontColorMaintext, 0.2);
+  transform: translate3d(0, 0, 0);
+  // transition: bottom 0.3s;
+  backface-visibility: hidden;
+
+  .keyboard-open & {
+    display: none;
+  }
+}

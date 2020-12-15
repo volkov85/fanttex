@@ -1,0 +1,70 @@
+-
+  let productCartClasses = [];
+
+  if (isSample) productCartClasses.push('product-cart--sample');
+
+  productCartClasses.push('in-cart');
+
+div.product-cart(class=productCartClasses)
+  div.product-cart__info(itemscope itemtype="https://schema.org/ImageObject")
+    a(href="img/product_01-image-full-01.jpg" data-size="1500x999" data-no-swup)
+      img.lozad(src="img/product_01-image-thumb-01.jpg" srcset="img/placeholder-3x3.svg 70w" sizes="70px" data-srcset="img/product_01-image-thumb-01.jpg 70w" alt=name title=name width="70" height="70" loading="lazy" decoding="async" itemprop="contentUrl")
+    meta(itemprop="datePublished" content="2020-11-23")
+    meta(itemprop="author" content="FANNTEX — ткани для одежды оптом и в нарезку")
+    div.product-cart__description
+      p.text-small(class="product-cart__id") Артикул: #{id}
+      p.product-cart__name <a href="#{`./product${page.type === 'mobile' ? '-mobile' : ''}.html`}">#{name}</a>
+      p.text-small(class="product-cart__color") #{color}
+
+  div.product-cart__amount
+    if isSample
+      div.product-cart__sample
+        div.product-cart__sample-dropdown
+          button.product-cart__sample-toggle(type="button") Образец
+          div.product-cart__sample-list
+            button.product-cart__sample-remove-cart(type="button") Удалить из корзины
+    else
+      div.product-amount(class="selected")
+        div.product-amount__dropdown
+          div.product-amount__field
+            input(type="text" name="amount" value="100" data-min="5" data-max="1000" data-unit="м" spellcheck="false" title="Количество ткани" aria-label="Количество ткани")
+            div.product-amount__control
+              button.product-amount__button-remove(type="button" title="Удалить из корзины")
+                span.visually-hidden Удалить из корзины
+              button.product-amount__button-decrease(type="button" title="Уменьшить количество")
+                span.visually-hidden Уменьшить количество
+              button.product-amount__button-increase(type="button" title="Увеличить количество")
+                span.visually-hidden Увеличить количество
+          div.product-amount__list
+            button.product-amount__button-remove-cart(type="button") Удалить из корзины
+            div.product-amount__inner
+              p.product-amount__list-title
+                span Длина
+                span Цена за 1 м
+              div.product-amount__options
+                a.product-amount__option(href="#" data-no-swup)
+                  span.product-amount__quantity 5 м
+                  span.product-amount__price 433<sup>30</sup> руб.
+                  span.product-amount__discount +5%
+                a.product-amount__option(href="#" data-no-swup)
+                  span.product-amount__quantity 25 м
+                  span.product-amount__price 412<sup>67</sup> руб.
+                a.product-amount__option(href="#" data-no-swup)
+                  span.product-amount__quantity 100 м
+                  span.product-amount__price 400<sup>30</sup> руб.
+                  span.product-amount__discount -3%
+                a.product-amount__option(href="#" data-no-swup)
+                  span.product-amount__quantity 300 м
+                  span.product-amount__price 392<sup>04</sup> руб.
+                  span.product-amount__discount -5%
+                a.product-amount__option(href="#" data-no-swup)
+                  span.product-amount__quantity 500 м
+                  span.product-amount__price 383<sup>79</sup> руб.
+                  span.product-amount__discount -7%
+
+  div.product-cart__price
+    p.product-cart__price-current <span class="price-current"><span class="price-integer">#{price.split('.')[0]}</span><sup class="price-fraction visually-hidden">#{price.split('.')[1]}</sup></span> руб.
+
+    if !isSample
+      p.text-small(class="product-cart__price-total") Вместо <span class="price-no-discount"><span class="price-integer">43 330</span><sup class="price-fraction">00</sup></span> руб.
+      p.text-small(class="product-cart__price-profit") Экономия <span class="price-discount-value"><span class="price-integer">3 300</span><sup class="price-fraction visually-hidden">00</sup></span> руб.

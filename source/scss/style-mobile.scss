@@ -1,0 +1,74 @@
+// Подключаем стили Google-шрифтов
+@import "https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap";
+
+// Подключаем стили сторонних библиотек
+@import "../../node_modules/swiper/swiper-bundle";
+@import "../../node_modules/aos/dist/aos";
+@import "../../photoswipe/dist/photoswipe";
+@import "../../photoswipe/dist/default-skin/default-skin";
+
+// Подключаем Normalize
+@import "normalize";
+
+// Подключаем переменные, функции и миксины
+@import "misc/variables", "misc/functions", "misc/mixins";
+
+// Подключаем шрифты
+@import "misc/fonts";
+
+// Подключаем шаблонные и вспомогательные классы
+@import "misc/extends", "blocks/visually-hidden", "blocks/container-mobile";
+
+// Подключаем анимацию
+@import "misc/animations";
+
+// Подключаем основные стили
+@import "misc/base-mobile", "blocks/page-mobile", "blocks/button-mobile", "blocks/breadcrumbs", "blocks/overlay-mobile";
+
+// Подключаем стили шапки
+@import "blocks/header-mobile", "blocks/logo", "blocks/search-mobile";
+
+// Подключаем стили навигации
+@import "blocks/main-nav-mobile", "blocks/page-nav", "blocks/menu-main-mobile", "blocks/menu-profile-mobile", "blocks/menu-categories-mobile", "blocks/mobile-nav", "blocks/menu-catalog-mobile";
+
+// Подключаем стили социальных кнопок
+@import "blocks/social", "blocks/share";
+
+// Подключаем стили баннеров
+@import "blocks/banners-mobile", "blocks/banner-mobile";
+
+// Подключаем стили фильтров
+@import "blocks/filters-nav", "blocks/filters-mobile", "blocks/select-mobile", "blocks/toggle-mobile", "blocks/selection-mobile";
+
+// Подключаем стили каталога
+@import "blocks/catalog-mobile", "blocks/product-card-mobile", "blocks/product-variant-mobile", "blocks/product-amount";
+
+// Подключаем стили форм
+@import "blocks/form-section", "blocks/callback-mobile", "blocks/ask-question-mobile", "blocks/inner-form-mobile";
+
+// Подключаем стили блока текстового контента
+@import "blocks/content";
+
+// Подключаем стили блока товара
+@import "blocks/product-mobile";
+
+// Подключаем стили личного кабинета
+@import "blocks/dashboard-mobile", "blocks/dashboard-panel", "blocks/order-mobile", "blocks/order-cancel-mobile", "blocks/profile-mobile";
+
+// Подключаем стили пагинации
+@import "blocks/pagination-mobile";
+
+// Подключаем стили блока корзины
+@import "blocks/cart-mobile", "blocks/product-cart-mobile", "blocks/cart-form-mobile", "blocks/billing-profile-mobile";
+
+// Подключаем стили страниц блога
+@import "blocks/blog", "blocks/blog-preview-mobile", "blocks/blog-post-mobile", "blocks/blog-tags";
+
+// Подключаем стили внутренних страниц
+@import "blocks/about-mobile", "blocks/inner-page";
+
+// Подключаем стили подвала
+@import "blocks/footer-mobile";
+
+// Подключаем стили всплывающих окон
+@import "blocks/popup-mobile", "blocks/popup-form";

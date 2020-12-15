@@ -1,0 +1,36 @@
+extends pug/layout
+
+block variables
+  -
+    let page = {
+      title: 'Авторизация - Fanttex',
+      name: 'authorization',
+      type: 'mobile'
+    };
+
+block content
+  section.inner-page
+    div.container
+      div.inner-page__top
+        nav.page-nav
+          ul.page-nav__list
+            li.page-nav__item
+              a.page-nav__link(href="javascript:history.back()") Вернуться назад
+
+      div.inner-page__main
+        h1 Авторизация
+        p Какой-то предварительный текст про правила работы. И обязательно - если вы уже зарегистрированы, то вы можете войти.
+
+      form.inner-form(class="form" action="#" method="post")
+        div.inner-form__fields
+          label.inner-form__field(class="form-field")
+            input(type="email" name="email" aria-label="Введите ваш e-mail" required)
+            span Почта
+          label.inner-form__field(class="form-field")
+            input(type="password" name="password" aria-label="Введите ваш пароль" required)
+            span Пароль
+
+        div.inner-form__buttons
+          button.button(class="button--final inner-page__authorize" type="submit") Войти
+
+      +pagination()

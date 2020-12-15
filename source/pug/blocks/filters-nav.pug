@@ -1,0 +1,7 @@
+aside.filters-nav
+  div.filters-nav__wrapper
+    +filters('selections')
+
+  if page.type === 'mobile'
+    button.filters-nav__close(type="button")
+      span.visually-hidden Закрыть

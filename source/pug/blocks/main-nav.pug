@@ -1,0 +1,120 @@
+aside.main-nav
+  div.main-nav__wrapper(class="swiper-container")
+    button.main-nav__button-back(type="button" title="Назад ко всем тканям")
+      span.visually-hidden Назад ко всем тканям
+
+    div.main-nav__groups(class="swiper-wrapper")
+      div.main-nav__group(class="swiper-slide")
+        p.main-nav__title Все ткани
+        a.main-nav__group-link(href="#" data-no-swup) По названию
+
+        nav.menu-categories
+          ul.menu-categories__list
+            li.menu-categories__item
+              a.menu-categories__link(href=`./catalog${page.type === 'mobile' ? '-mobile' : ''}.html`) Блузочные
+            li.menu-categories__item
+              a.menu-categories__link(href=`./catalog${page.type === 'mobile' ? '-mobile' : ''}.html`) Костюмные
+            li.menu-categories__item
+              a.menu-categories__link(href=`./catalog${page.type === 'mobile' ? '-mobile' : ''}.html`) Пальтовые
+            li.menu-categories__item
+              a.menu-categories__link(href=`./catalog${page.type === 'mobile' ? '-mobile' : ''}.html`) Плательные
+            li.menu-categories__item
+              a.menu-categories__link(href=`./catalog${page.type === 'mobile' ? '-mobile' : ''}.html`) Плащевые
+            li.menu-categories__item
+              a.menu-categories__link(href=`./catalog${page.type === 'mobile' ? '-mobile' : ''}.html`) Подкладочные
+            li.menu-categories__item
+              a.menu-categories__link(href=`./catalog${page.type === 'mobile' ? '-mobile' : ''}.html`) Трикотаж
+            li.menu-categories__item
+              a.menu-categories__link(href=`./catalog${page.type === 'mobile' ? '-mobile' : ''}.html`) Костюмные ткани
+
+        nav.menu-main
+          ul.menu-main__list
+            li.menu-main__item
+              a.menu-main__link(href=`./about${page.type === 'mobile' ? '-mobile' : ''}.html#payment`) Оплата
+            li.menu-main__item
+              a.menu-main__link(href=`./about${page.type === 'mobile' ? '-mobile' : ''}.html#delivery`) Доставка
+            li.menu-main__item
+              a.menu-main__link(href=`./about${page.type === 'mobile' ? '-mobile' : ''}.html#contacts`) Контакты
+            li.menu-main__item
+              a.menu-main__link(href=`./about${page.type === 'mobile' ? '-mobile' : ''}.html`) О компании
+
+        nav.menu-profile
+          ul.menu-profile__list
+            li.menu-profile__item
+              a.menu-profile__link(href=`./orders${page.type === 'mobile' ? '-mobile' : ''}.html`) Заказы
+            li.menu-profile__item
+              a.menu-profile__link(href=`./favorites${page.type === 'mobile' ? '-mobile' : ''}.html`) Понравилось
+            li.menu-profile__item
+              a.menu-profile__link(href=`./dashboard${page.type === 'mobile' ? '-mobile' : ''}.html`) Личный кабинет
+            li.menu-profile__item
+              a.menu-profile__link(href=`./cart${page.type === 'mobile' ? '-mobile' : ''}.html`) Корзина
+
+        a.main-nav__phone(href="tel:+73832630309") +7 (383) 263-03-09
+
+      div.main-nav__group(class="swiper-slide")
+        p.main-nav__title По названию
+
+        nav.menu-categories
+          ul.menu-categories__list
+            li.menu-categories__item
+              a.menu-categories__link(href=`./catalog${page.type === 'mobile' ? '-mobile' : ''}.html`) Академик
+            li.menu-categories__item
+              a.menu-categories__link(href=`./catalog${page.type === 'mobile' ? '-mobile' : ''}.html`) Ангора
+            li.menu-categories__item
+              a.menu-categories__link(href=`./catalog${page.type === 'mobile' ? '-mobile' : ''}.html`) Армани
+            li.menu-categories__item
+              a.menu-categories__link(href=`./catalog${page.type === 'mobile' ? '-mobile' : ''}.html`) Атлас
+            li.menu-categories__item
+              a.menu-categories__link(href=`./catalog${page.type === 'mobile' ? '-mobile' : ''}.html`) Барбери
+            li.menu-categories__item
+              a.menu-categories__link(href=`./catalog${page.type === 'mobile' ? '-mobile' : ''}.html`) Барберри
+            li.menu-categories__item
+              a.menu-categories__link(href=`./catalog${page.type === 'mobile' ? '-mobile' : ''}.html`) Барби
+            li.menu-categories__item
+              a.menu-categories__link(href=`./catalog${page.type === 'mobile' ? '-mobile' : ''}.html`) Бархат
+            li.menu-categories__item
+              a.menu-categories__link(href=`./catalog${page.type === 'mobile' ? '-mobile' : ''}.html`) Батист
+            li.menu-categories__item
+              a.menu-categories__link(href=`./catalog${page.type === 'mobile' ? '-mobile' : ''}.html`) Бебисофт
+            li.menu-categories__item
+              a.menu-categories__link(href=`./catalog${page.type === 'mobile' ? '-mobile' : ''}.html`) Бифлекс
+            li.menu-categories__item
+              a.menu-categories__link(href=`./catalog${page.type === 'mobile' ? '-mobile' : ''}.html`) Блузочная
+            li.menu-categories__item
+              a.menu-categories__link(href=`./catalog${page.type === 'mobile' ? '-mobile' : ''}.html`) Букле
+            li.menu-categories__item
+              a.menu-categories__link(href=`./catalog${page.type === 'mobile' ? '-mobile' : ''}.html`) Варенка
+            li.menu-categories__item
+              a.menu-categories__link(href=`./catalog${page.type === 'mobile' ? '-mobile' : ''}.html`) Вафля
+            li.menu-categories__item
+              a.menu-categories__link(href=`./catalog${page.type === 'mobile' ? '-mobile' : ''}.html`) Вельвет
+            li.menu-categories__item
+              a.menu-categories__link(href=`./catalog${page.type === 'mobile' ? '-mobile' : ''}.html`) Венеция
+
+        nav.menu-main
+          ul.menu-main__list
+            li.menu-main__item
+              a.menu-main__link(href=`./about${page.type === 'mobile' ? '-mobile' : ''}.html#payment`) Оплата
+            li.menu-main__item
+              a.menu-main__link(href=`./about${page.type === 'mobile' ? '-mobile' : ''}.html#delivery`) Доставка
+            li.menu-main__item
+              a.menu-main__link(href=`./about${page.type === 'mobile' ? '-mobile' : ''}.html#contacts`) Контакты
+            li.menu-main__item
+              a.menu-main__link(href=`./about${page.type === 'mobile' ? '-mobile' : ''}.html`) О компании
+
+        nav.menu-profile
+          ul.menu-profile__list
+            li.menu-profile__item
+              a.menu-profile__link(href=`./orders${page.type === 'mobile' ? '-mobile' : ''}.html`) Заказы
+            li.menu-profile__item
+              a.menu-profile__link(href=`./favorites${page.type === 'mobile' ? '-mobile' : ''}.html`) Понравилось
+            li.menu-profile__item
+              a.menu-profile__link(href=`./dashboard${page.type === 'mobile' ? '-mobile' : ''}.html`) Личный кабинет
+            li.menu-profile__item
+              a.menu-profile__link(href=`./cart${page.type === 'mobile' ? '-mobile' : ''}.html`) Корзина
+
+        a.main-nav__phone(href="tel:+73832630309") +7 (383) 263-03-09
+
+  if page.type === 'mobile'
+    button.main-nav__close(type="button")
+      span.visually-hidden Закрыть

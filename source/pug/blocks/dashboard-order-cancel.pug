@@ -1,0 +1,14 @@
+section.order-cancel
+  h2 Отмена заказа №13515 от 30.08.2020
+  p
+    | Вы уверены, что хотите отменить заказ №13515 от 30.08.2020?<br>
+    | Отмена заказа необратима.
+
+  form.order-cancel__form(class="form" action="#" method="post")
+    label.order-cancel__field(class="form-field")
+      textarea(name="message" aria-label="Укажите, пожалуйста, причину отмены заказа" required)
+      span Укажите, пожалуйста, причину отмены#{page.type === 'desktop' ? ' заказа' : ''}
+
+    div.order-cancel__buttons
+      button.button(class="button--cancel" type="submit") Отменить заказ
+      a.order-cancel__link(href=`./orders${page.type === 'mobile' ? '-mobile' : ''}.html`) Вернуться к списку заказов

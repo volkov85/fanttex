@@ -1,0 +1,17 @@
+.container {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: $widthDesktopSmall;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+
+  @media (min-width: $widthDesktop) {
+    max-width: $widthDesktop;
+  }
+
+  @media (min-width: $widthDesktopWide) {
+    max-width: $widthDesktopWide;
+  }
+}

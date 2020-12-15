@@ -1,0 +1,25 @@
+.page-nav__list {
+  @extend %list-reset;
+  display: flex;
+  justify-content: space-between;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.page-nav__item {
+  font-size: $fontTextSmall;
+  line-height: $lineHeightNormal;
+  color: $fontColorGrey;
+}
+
+.page-nav__link {
+  margin-right: 15px;
+  margin-left: 15px;
+  line-height: $lineHeightNormal;
+
+  &:hover,
+  &:focus {
+    color: $ColorButtonOrange;
+    outline: none;
+  }
+}

@@ -1,0 +1,29 @@
+extends pug/layout
+
+block variables
+  -
+    let page = {
+      title: 'Заказ создан - Fanttex',
+      name: 'cart-success',
+      type: 'mobile'
+    };
+
+block content
+  section.cart
+    div.container
+      div.cart__top
+        nav.page-nav
+          ul.page-nav__list
+            li.page-nav__item
+              a.page-nav__link(href="./catalog-mobile.html") Перейти в каталог
+
+      div.cart__main
+        h1 Заказ создан
+
+        div.cart__success
+          p
+            | Ваш заказ №13515 от 30.08.2020 успешно сформирован и наши менеджеры уже обрабатывают его.<br>
+            | В ближайшее время мы перезвоним вам для подтверждения заказа и выбора удобной доставки.<br>
+            | Вы можете следить за выполнением заказа в личном кабинете.
+
+      +pagination()

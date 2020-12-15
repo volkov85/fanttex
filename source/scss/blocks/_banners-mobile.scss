@@ -1,0 +1,18 @@
+.banners {
+  margin-bottom: 30px;
+}
+
+.banners__wrapper {
+  overflow: visible;
+}
+
+.banners__list {
+  display: flex;
+}
+
+.banners__group {
+  display: flex;
+  justify-content: space-between;
+  width: 330px;
+  margin-right: 30px;
+}

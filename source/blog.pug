@@ -1,0 +1,43 @@
+extends pug/layout
+
+block variables
+  -
+    let page = {
+      title: 'Блог компании - Fanttex',
+      name: 'blog',
+      type: 'desktop'
+    };
+
+block content
+  section.blog
+    div.container
+      div.blog__top
+        nav.page-nav
+          ul.page-nav__list
+            li.page-nav__item
+              a.page-nav__link(href="javascript:history.back()") Вернуться назад
+
+      div.blog__main
+        h1 Блог компании
+
+        div.blog__list
+          +blog-preview({hasLazyLoad: false})
+
+          - for (let i = 2; i <= 5; i++)
+            +blog-preview()
+
+      div.pagination(class="pagination--full")
+        div.pagination__top
+          div.pagination__list
+            a.pagination__button(class="active" title="Вы на странице 1") 1
+            a.pagination__button(href="#" title="Перейти на страницу 2") 2
+            a.pagination__button(href="#" title="Перейти на страницу 3") 3
+            a.pagination__button(href="#" title="Перейти на страницу 4") 4
+            a.pagination__button(href="#" title="Перейти на страницу 5") 5
+            a.pagination__button ...
+            a.pagination__button(href="#" title="Перейти на страницу 11") 11
+          div.pagination__control
+            a.pagination__button(class="pagination__button--next" href="#" title="Перейти на следующую страницу")
+              span.visually-hidden Перейти на следующую страницу
+        a.pagination__button(class="pagination__button--top" href="#" title="Перейти на верх страницы")
+          span.visually-hidden Перейти на верх страницы

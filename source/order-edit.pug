@@ -1,0 +1,13 @@
+extends pug/layout
+
+block variables
+  -
+    let page = {
+      title: 'Личный кабинет - Fanttex',
+      name: 'dashboard',
+      type: 'desktop'
+    };
+    let dashboard = 'order-edit';
+
+block content
+  include pug/blocks/dashboard

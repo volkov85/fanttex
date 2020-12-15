@@ -1,0 +1,16 @@
+form.callback(class="form" action="#" method="post")
+  div.callback__cols
+    div.callback__col
+      div.callback__cell
+        p.callback__text Нужна помощь с поиском ткани?
+    div.callback__col
+      div.callback__cell
+        label.callback__field(class="form-field")
+          input(type="tel" name="phone" aria-label="Введите ваш телефон" required)
+          span Телефон
+      label.callback__check(class="form-check privacy filled")
+        input(type="checkbox" name="privacyAccepted" checked required)
+        span Я даю согласие на обработку персональных данных
+    div.callback__col
+      div.callback__cell
+        button.button(class="button--callback" type="submit") Да, позвоните мне, пожалуйста

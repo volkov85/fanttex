@@ -1,0 +1,60 @@
+$fontBase: "Open Sans", "Arial", sans-serif;
+$fontLogo: "Noah", "Arial", sans-serif;
+$fontFooter: "Gilroy", "Arial", sans-serif;
+
+$fontTextTiny: 10px;
+$fontTextSmall: 12px;
+$fontTextRegular: 14px; // default
+$fontTextMedium: 16px;
+$fontTextLarge: 18px;
+$fontTextHuge: 20px;
+
+$fontTextLogo: 26px;
+
+$fontTextH1: 32px;
+$fontTextH2: 24px;
+$fontTextH3: 21px;
+
+$lineHeightNormal: 1.2;
+$lineHeightMedium: 1.5;
+$lineHeightLarge: 1.75;
+$lineHeightHuge: 1.9; // default
+
+$lineHeightTextSmall: 16px;
+$lineHeightTextRegular: 18px;
+$lineHeightTextMedium: 21px;
+$lineHeightTextLarge: 26px;
+$lineHeightTextHuge: 32px;
+
+$fontLight: 300;
+$fontRegular: 400;
+$fontMedium: 500;
+$fontSemiBold: 600;
+$fontBold: 700;
+$fontExtraBold: 800;
+$fontBlack: 900;
+
+$fontColorMaintext: #000000; // default
+$fontColorGrey: #969696;
+$fontColorBannerLink: #c0c8e5;
+$fontColorProductId: #8a8a8a;
+$fontColorProductLink: #6d6d6d;
+$fontColorPlaceholder: #545454;
+$fontColorWhite: #ffffff;
+$fontColorGreen: #0d8424;
+
+$fontColorSocials: (
+  "vk": #4a76a8,
+  "fb": #1095f4,
+  "tw": #1da1f2,
+  "tg": #456f92,
+  "ok": #ee8208,
+  "mail": #c23b2c,
+  "link": #ffb400
+);
+
+// Подключаем шрифт Gilroy
+@include font-face("Gilroy", "ExtraBold", $fontExtraBold);
+
+// Подключаем шрифт Noah
+@include font-face("Noah", "Regular", $fontRegular);

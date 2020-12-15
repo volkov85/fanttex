@@ -1,0 +1,36 @@
+.dashboard-panel {
+  margin-top: 30px;
+  margin-bottom: 30px;
+
+  &--slider {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.dashboard-panel__title {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-weight: $fontSemiBold;
+  font-size: $fontTextRegular;
+  line-height: $lineHeightNormal;
+}
+
+.dashboard-panel__top {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.dashboard-panel__status {
+  width: 330px;
+}
+
+.dashboard-panel__inner {
+  .dashboard-panel--slider & {
+    overflow: visible;
+  }
+}
+
+.dashboard-panel__catalog {
+  display: flex;
+}

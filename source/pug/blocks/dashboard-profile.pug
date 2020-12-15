@@ -1,0 +1,36 @@
+div.profile
+  form.profile__form(class="form" action="#" method="post")
+    div.profile__form-fields
+      label.profile__form-field(class="form-field")
+        input(type="text" name="name" aria-label="Введите ваше имя" required)
+        span Имя
+      label.profile__form-field(class="form-field verification")
+        input(type="tel" name="phone" aria-label="Введите ваш телефон" required)
+        span Телефон
+        a.form-field-verify(href="#" data-no-swup) Подтвердить
+      label.profile__form-field(class="form-field verification")
+        input(type="email" name="email" aria-label="Введите ваш e-mail" required)
+        span Почта
+        a.form-field-verify(href="#" data-no-swup) Подтвердить
+      label.profile__form-field(class="form-field")
+        input(type="password" name="password" aria-label="Введите ваш пароль" required)
+        span Пароль
+      label.profile__form-field(class="form-field")
+        input(type="password" name="passwordConfirm" aria-label="Введите ваш пароль повторно" required)
+        span Подтверждение пароля
+
+    div.profile__form-buttons
+      button.button(class="button--final profile__save" type="submit") Сохранить
+
+  div.profile__social
+    div.social(class="social--bind")
+      ul.social__list
+        li.social__item
+          a.social__link(class="social__link--vk" href="#" data-no-swup)
+            span Вконтакте
+        li.social__item
+          a.social__link(class="social__link--fb" href="#" data-no-swup)
+            span Facebook
+        li.social__item
+          a.social__link(class="social__link--ok" href="#" data-no-swup)
+            span Одноклассники

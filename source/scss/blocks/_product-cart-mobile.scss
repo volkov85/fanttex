@@ -1,0 +1,147 @@
+.product-cart {
+  margin-bottom: 30px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &.hidden {
+    position: relative;
+    z-index: 2;
+    animation: 0.4s both reverse fade-in;
+  }
+}
+
+.product-cart__info {
+  display: flex;
+  margin-bottom: 10px;
+
+  a {
+    flex-shrink: 0;
+    align-self: flex-start;
+    margin-right: 10px;
+
+    &:hover,
+    &:focus {
+      outline: none;
+    }
+  }
+
+  img {
+    display: block;
+    width: 70px;
+  }
+}
+
+.product-cart__description {
+  p {
+    margin: 0;
+    line-height: $fontTextLarge;
+  }
+
+  a {
+    color: inherit;
+
+    &:hover,
+    &:focus {
+      color: $ColorButtonOrange;
+      outline: none;
+    }
+  }
+}
+
+.product-cart__name {
+  font-weight: $fontBold;
+}
+
+.product-cart__amount {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.product-cart__sample {
+  position: relative;
+  display: none;
+  width: 100%;
+  height: 50px;
+
+  .product-cart--sample & {
+    display: block;
+  }
+}
+
+.product-cart__sample-toggle {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding: 16px;
+  line-height: $lineHeightNormal;
+  background-color: $ColorSelected;
+  border: 1px solid $ColorBorder;
+  appearance: none;
+  cursor: pointer;
+
+  .opened & {
+    z-index: 3;
+    background-color: transparent;
+    border-color: transparent;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.product-cart__sample-list {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  display: none;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding-top: 48px;
+  background-color: $ColorPrimary;
+  border: 1px solid $ColorBorderGrey;
+  box-shadow: 0 0 10px $ColorShadow;
+
+  .opened & {
+    z-index: 2;
+    display: flex;
+  }
+}
+
+.product-cart__sample-remove-cart {
+  align-self: center;
+  padding: 15px;
+  font-size: $fontTextSmall;
+  line-height: $lineHeightNormal;
+  text-align: center;
+  color: $fontColorGrey;
+  background: none;
+  border: none;
+  cursor: pointer;
+  appearance: none;
+
+  &:hover,
+  &:focus {
+    color: $ColorButtonOrange;
+    outline: none;
+  }
+}
+
+.product-cart__price {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+
+  p {
+    margin: 0;
+    margin-right: 4px;
+    line-height: $lineHeightMedium;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

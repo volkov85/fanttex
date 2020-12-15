@@ -1,0 +1,21 @@
+.profile {
+  margin-top: 60px;
+  margin-bottom: 30px;
+}
+
+.profile__form {
+  width: 570px;
+  margin-bottom: 30px;
+}
+
+.profile__form-fields {
+  margin-bottom: 20px;
+}
+
+.profile__form-field {
+  margin-bottom: 10px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

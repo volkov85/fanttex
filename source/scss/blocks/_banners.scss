@@ -1,0 +1,26 @@
+.banners {
+  margin-bottom: 30px;
+}
+
+.banners__wrapper {
+  overflow: visible;
+}
+
+.banners__list {
+  display: flex;
+}
+
+.banners__group {
+  display: flex;
+  justify-content: space-between;
+  width: 870px;
+  margin-right: 30px;
+
+  @media (min-width: $widthDesktop) {
+    width: 1170px;
+  }
+
+  @media (min-width: $widthDesktopWide) {
+    width: 1470px;
+  }
+}

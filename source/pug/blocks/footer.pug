@@ -1,0 +1,75 @@
+footer.footer#swup-footer
+  div.container
+    div.footer__columns
+      div.footer__column(class="footer__column--categories")
+        div.menu-categories(class="menu-categories--footer")
+          ul.menu-categories__list
+            li.menu-categories__item
+              a.menu-categories__link(href=`./catalog${page.type === 'mobile' ? '-mobile' : ''}.html`) Все ткани оптом и в розницу
+            li.menu-categories__item
+              a.menu-categories__link(href=`./catalog${page.type === 'mobile' ? '-mobile' : ''}.html`) Ткани по названию
+            li.menu-categories__item
+              a.menu-categories__link(href=`./catalog${page.type === 'mobile' ? '-mobile' : ''}.html`) Блузочные ткани
+            li.menu-categories__item
+              a.menu-categories__link(href=`./catalog${page.type === 'mobile' ? '-mobile' : ''}.html`) Костюмные ткани
+            li.menu-categories__item
+              a.menu-categories__link(href=`./catalog${page.type === 'mobile' ? '-mobile' : ''}.html`) Пальтовые ткани
+            li.menu-categories__item
+              a.menu-categories__link(href=`./catalog${page.type === 'mobile' ? '-mobile' : ''}.html`) Плательные ткани
+            li.menu-categories__item
+              a.menu-categories__link(href=`./catalog${page.type === 'mobile' ? '-mobile' : ''}.html`) Плащевые ткани
+            li.menu-categories__item
+              a.menu-categories__link(href=`./catalog${page.type === 'mobile' ? '-mobile' : ''}.html`) Подкладочные ткани
+            li.menu-categories__item
+              a.menu-categories__link(href=`./catalog${page.type === 'mobile' ? '-mobile' : ''}.html`) Трикотаж оптом и в розницу
+
+      div.footer__column(class="footer__column--menu")
+        div.menu-main(class="menu-main--footer")
+          ul.menu-main__list
+            li.menu-main__item
+              a.menu-main__link(href=`./about${page.type === 'mobile' ? '-mobile' : ''}.html#payment`) Оплата
+            li.menu-main__item
+              a.menu-main__link(href=`./about${page.type === 'mobile' ? '-mobile' : ''}.html#delivery`) Доставка
+            li.menu-main__item
+              a.menu-main__link(href=`./about${page.type === 'mobile' ? '-mobile' : ''}.html#contacts`) Контакты
+            li.menu-main__item
+              a.menu-main__link(href=`./about${page.type === 'mobile' ? '-mobile' : ''}.html`) О компании
+
+        div.menu-profile(class="menu-profile--footer")
+          ul.menu-profile__list
+            li.menu-profile__item
+              a.menu-profile__link(href=`./orders${page.type === 'mobile' ? '-mobile' : ''}.html`) Заказы
+            li.menu-profile__item
+              a.menu-profile__link(href=`./favorites${page.type === 'mobile' ? '-mobile' : ''}.html`) Понравилось
+            li.menu-profile__item
+              a.menu-profile__link(href=`./dashboard${page.type === 'mobile' ? '-mobile' : ''}.html`) Личный кабинет
+            li.menu-profile__item
+              a.menu-profile__link(href=`./cart${page.type === 'mobile' ? '-mobile' : ''}.html`) Корзина
+
+      div.footer__column#contactInfo(class="footer__column--contacts")
+        div.social
+          ul.social__list
+            li.social__item
+              a.social__link(class="social__link--vk" href="https://vk.com/" target="_blank" itemprop="sameAs")
+                span Вконтакте
+            li.social__item
+              a.social__link(class="social__link--fb" href="https://www.facebook.com/" target="_blank" itemprop="sameAs")
+                span Facebook
+            li.social__item
+              a.social__link(class="social__link--tw" href="https://twitter.com/" target="_blank" itemprop="sameAs")
+                span Twitter
+            li.social__item
+              a.social__link(class="social__link--tg" href="https://telegram.org/" target="_blank" itemprop="sameAs")
+                span Telegram
+            li.social__item
+              a.social__link(class="social__link--ok" href="https://ok.ru/" target="_blank" itemprop="sameAs")
+                span Одноклассники
+
+        div.footer__info
+          a.footer__link-mobile(href=`./${dashboard && dashboard !== 'main' ? dashboard : page.name}${page.type === 'desktop' ? '-mobile' : ''}.html` data-no-swup) Переключить сайт на #{page.type === 'desktop' ? 'мобильную' : 'десктопную'} версию
+          address.footer__contacts
+            p(itemprop="address" itemscope itemtype="https://schema.org/PostalAddress") <span itemprop="postalCode">630015</span>, <span itemprop="addressLocality">г. Новосибирск</span>, <span itemprop="streetAddress">ул. Электрозаводская, д.2 к.1</span>
+            a(href="tel:+73832630309") <span itemprop="telephone">+7 (383) 263-03-09</span>
+            a(href="mailto:info@fanttex.ru") <span itemprop="email">info@fanttex.ru</span>
+          a.footer__privacy-policy(href=`./privacy${page.type === 'mobile' ? '-mobile' : ''}.html`) Политика конфиденциальности
+          p.footer__copyright 2016 — 2020 © Все права защищены.

@@ -1,0 +1,80 @@
+.toggle {
+  position: relative;
+  display: block;
+  max-width: 300px;
+  min-height: 36px;
+  cursor: pointer;
+
+  input {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    cursor: pointer;
+    appearance: none;
+
+    &:checked + span {
+      color: $ColorPrimary;
+      background-color: $ColorBorder;
+      box-shadow:
+        inset 0 3px 7px rgba($ColorShadowInset, 0.5),
+        inset 0 0 18px rgba($ColorPrimary, 0.2),
+        0 0 9px 1px rgba($ColorBorder, 0.5);
+    }
+  }
+
+  span {
+    display: block;
+    padding: 11px 30px;
+    font-size: $fontTextSmall;
+    line-height: $lineHeightNormal;
+    color: $ColorScrollbar;
+    background-color: $ColorInput;
+    box-shadow:
+      inset 0 0 18px rgba($ColorPrimary, 0.5),
+      0 0 9px 1px rgba($ColorShadow, 0.5);
+    user-select: none;
+  }
+
+  &--selection {
+    pointer-events: none;
+
+    input {
+      pointer-events: auto;
+
+      &:checked {
+        pointer-events: none;
+
+        + span {
+          padding-right: 55px;
+          color: $fontColorMaintext;
+          background-color: $ColorSelected;
+          border-color: $ColorBorder;
+          box-shadow: none;
+
+          &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 34px;
+            height: 34px;
+            background: url("../img/icon-cross.svg") center / 8px no-repeat $ColorSelected;
+            border: 1px solid $ColorBorder;
+            pointer-events: auto;
+          }
+        }
+      }
+    }
+
+    span {
+      padding: 10px 17px;
+      color: inherit;
+      border: 1px solid transparent;
+      box-shadow: none;
+    }
+  }
+}

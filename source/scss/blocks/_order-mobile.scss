@@ -1,0 +1,105 @@
+.order {
+  display: none;
+  box-sizing: border-box;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 30px 15px;
+  background-color: $ColorPrimary;
+  border: 1px solid $ColorBorderGrey;
+
+  &.shown {
+    display: block;
+    animation: 0.4s both fade-in;
+  }
+}
+
+.order__title {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-weight: $fontSemiBold;
+  font-size: $fontTextRegular;
+  line-height: $lineHeightNormal;
+}
+
+.order__inner {
+
+}
+
+.order__table {
+  display: block;
+  margin-bottom: 20px;
+
+  tbody {
+    display: block;
+  }
+
+  td {
+    display: block;
+    padding: 0;
+    font-size: $fontTextSmall;
+    line-height: $lineHeightTextMedium;
+    color: $fontColorGrey;
+  }
+}
+
+.order__item {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.order__item-name {
+
+}
+
+.order__item-amount {
+
+}
+
+.order__item-price {
+
+}
+
+.order__links {
+  @extend %list-reset;
+
+  li {
+    font-weight: $fontSemiBold;
+    line-height: $lineHeightTextLarge;
+  }
+
+  a {
+    line-height: $lineHeightTextLarge;
+    color: inherit;
+
+    &:hover,
+    &:focus {
+      color: $ColorButtonOrange !important;
+      outline: none;
+    }
+  }
+}
+
+.order__status {
+  .order-status {
+    .order--processing & {
+      color: $ColorButtonOrange;
+    }
+
+    .order--finished & {
+      color: $ColorButtonGreen;
+    }
+
+    .order--canceled & {
+      color: $ColorRed;
+    }
+  }
+}
+
+.order__payment {
+  color: $ColorButtonGreen;
+}

@@ -1,0 +1,26 @@
+div.pagination(class=isShown ? 'pagination--full' : false)
+  if isShown
+    div.pagination__top
+      div.pagination__list
+        if pageActive === 1
+          a.pagination__button(class="active" title="Вы на странице 1") 1
+        else
+          a.pagination__button(href=`./catalog${page.type === 'mobile' ? '-mobile' : ''}.html` title="Перейти на страницу 1") 1
+        if pageActive === 2
+          a.pagination__button(class="active" title="Вы на странице 2") 2
+        else
+          a.pagination__button(href=`./catalog-2${page.type === 'mobile' ? '-mobile' : ''}.html` title="Перейти на страницу 2") 2
+        a.pagination__button(href="#" title="Перейти на страницу 3") 3
+        a.pagination__button(href="#" title="Перейти на страницу 4") 4
+        if !(page.type === 'mobile' && pageActive > 1)
+          a.pagination__button(href="#" title="Перейти на страницу 5") 5
+        a.pagination__button ...
+        a.pagination__button(href="#" title="Перейти на страницу 11") 11
+      div.pagination__control
+        if !(page.type === 'mobile' && pageActive === 1)
+          a.pagination__button(class="pagination__button--prev" href="#" title="Перейти на предыдущую страницу")
+            span.visually-hidden Перейти на предыдущую страницу
+        a.pagination__button(class="pagination__button--next" href="#" title="Перейти на следующую страницу")
+          span.visually-hidden Перейти на следующую страницу
+  a.pagination__button(class="pagination__button--top" href="#" title="Перейти на верх страницы")
+    span.visually-hidden Перейти на верх страницы

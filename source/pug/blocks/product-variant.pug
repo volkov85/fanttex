@@ -1,0 +1,72 @@
+-
+  let classes = [];
+
+  if (isOutOfStock) classes.push('out-of-stock');
+  if (isInCart) classes.push('in-cart');
+  if (isFavorite) classes.push('favorite');
+  if (isNew) classes.push('product-card--new');
+  if (discount) classes.push('product-card--sale');
+
+div.product-variant(class=classes data-discount=discount data-aos="fade-in")
+  div.product-variant__inner
+    div.product-variant__image
+      div.product-variant__previews(class="swiper-container")
+        div.product-variant__previews-list(class="swiper-wrapper")
+          - for (let i = 1; i <= imagesQuantity; i++)
+            div.product-variant__preview(class="swiper-slide" itemscope itemtype="https://schema.org/ImageObject")
+              a(class=isInPopup ? 'popup__close' : false href=`./product${page.type === 'mobile' ? '-mobile' : ''}.html`)
+                img.lozad(src=`img/product_01-variant-${String(counter).padStart(2, '0')}-thumb-01${page.type === 'mobile' ? '-mobile' : ''}.jpg` srcset="img/placeholder-3x3.svg 170w" sizes="170px" data-srcset=`img/product_01-variant-${String(counter).padStart(2, '0')}-thumb-01${page.type === 'mobile' ? '-mobile' : ''}.jpg 170w` alt=name title=name width="170" height="170" loading="lazy" decoding="async" itemprop="contentUrl")
+              meta(itemprop="datePublished" content="2020-11-23")
+              meta(itemprop="author" content="FANNTEX — ткани для одежды оптом и в нарезку")
+
+        div.product-variant__previews-pagination(class="previews-pagination")
+
+      button.product-variant__add-favorites(class="add-favorites-btn" type="button" title=isFavorite ? 'Удалить из избранного' : 'Добавить в избранное')
+        span.visually-hidden #{isFavorite ? 'Удалить из избранного' : 'Добавить в избранное'}
+
+    div.product-variant__info
+      h3.product-variant__title #{name}
+      p.product-variant__availability #{isOutOfStock ? 'Закончился' : 'В наличии'}
+
+    if page.type === 'desktop'
+      div.product-variant__add
+        div.product-amount(class="minimum")
+          div.product-amount__dropdown
+            div.product-amount__field
+              input(type="text" name="amount" data-min="5" data-max="1000" data-unit=unit spellcheck="false" title="Количество ткани" aria-label="Количество ткани")
+              div.product-amount__control
+                button.product-amount__button-remove(type="button" title="Удалить из корзины")
+                  span.visually-hidden Удалить из корзины
+                button.product-amount__button-decrease(type="button" title="Уменьшить количество")
+                  span.visually-hidden Уменьшить количество
+                button.product-amount__button-increase(type="button" title="Увеличить количество")
+                  span.visually-hidden Увеличить количество
+            div.product-amount__list
+              button.product-amount__button-remove-cart(type="button") Удалить из корзины
+              div.product-amount__inner
+                p.product-amount__list-title
+                  span #{unit === 'м' ? 'Длина' : 'Вес'}
+                  span Цена за 1 #{unit}
+                div.product-amount__options
+                  a.product-amount__option(href="#" data-no-swup)
+                    span.product-amount__quantity 5 #{unit}
+                    span.product-amount__price 433<sup>30</sup> руб.
+                    span.product-amount__discount +5%
+                  a.product-amount__option(href="#" data-no-swup)
+                    span.product-amount__quantity 25 #{unit}
+                    span.product-amount__price 412<sup>67</sup> руб.
+                  a.product-amount__option(href="#" data-no-swup)
+                    span.product-amount__quantity 100 #{unit}
+                    span.product-amount__price 400<sup>30</sup> руб.
+                    span.product-amount__discount -3%
+                  a.product-amount__option(href="#" data-no-swup)
+                    span.product-amount__quantity 300 #{unit}
+                    span.product-amount__price 392<sup>04</sup> руб.
+                    span.product-amount__discount -5%
+                  a.product-amount__option(href="#" data-no-swup)
+                    span.product-amount__quantity 500 #{unit}
+                    span.product-amount__price 383<sup>79</sup> руб.
+                    span.product-amount__discount -7%
+
+        button.button(class="button--final button--medium product-variant__add-cart add-cart-btn" type="button") В корзину
+        button.button(class="button--medium product-variant__out-of-stock out-of-stock-btn" type="button") #{isFavorite ? 'В избранном' : 'В избранное'}

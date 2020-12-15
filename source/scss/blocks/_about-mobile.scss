@@ -1,0 +1,105 @@
+.about {
+  margin-top: 30px;
+  margin-bottom: 60px;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  h2 {
+    margin-bottom: 20px;
+  }
+
+  a {
+    color: inherit;
+
+    &:hover,
+    &:focus {
+      color: $ColorButtonOrange;
+      outline: none;
+    }
+  }
+}
+
+.about__top {
+  margin-bottom: 30px;
+}
+
+.about__main {
+  margin-bottom: 60px;
+}
+
+.about__gallery {
+  width: 220px;
+  margin-top: 30px;
+}
+
+.about__gallery-wrapper {
+  overflow: visible;
+}
+
+.about__gallery-image {
+  width: auto;
+
+  &.is-hidden {
+    opacity: 0;
+  }
+}
+
+.about__contacts {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.about__contacts-info {
+  width: 330px;
+  margin-bottom: 30px;
+}
+
+.about__contacts-map {
+  position: relative;
+  left: calc(165px - 50vw);
+  width: 100vw;
+  height: 400px;
+
+  iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+}
+
+.about__delivery {
+  margin-top: 30px;
+  margin-bottom: 15px;
+
+  .list-check {
+    li {
+      margin-bottom: 10px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.about__payment {
+  margin-top: 15px;
+  margin-bottom: 30px;
+
+  h2 {
+    margin-top: 15px;
+    margin-bottom: 10px;
+  }
+
+  .list-order {
+    li {
+      margin-bottom: 10px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

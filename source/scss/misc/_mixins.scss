@@ -1,0 +1,42 @@
+// Выводит правило font-face для подключения шрифта с указанными параметрами
+@mixin font-face($family, $weightName, $weight: $fontRegular, $style: normal) {
+  $fontName: $family;
+  $fontNameSecond: spaceless($family);
+
+  @if $style == normal {
+    $fontName: $fontName + " " + $weightName;
+    $fontNameSecond: $fontNameSecond + "-" + $weightName;
+  } @else if $weight == 400 {
+    $fontName: $fontName + " " + capitalize($style);
+    $fontNameSecond: $fontNameSecond + "-" + capitalize($style);
+  } @else {
+    $fontName: $fontName + " " + $weightName + " " + capitalize($style);
+    $fontNameSecond: $fontNameSecond + "-" + $weightName + capitalize($style);
+  }
+
+  @font-face {
+    font-style: $style;
+    font-weight: $weight;
+    font-family: $family;
+    font-display: swap;
+    src:
+      local($fontName),
+      local($fontNameSecond),
+      url("../fonts/#{to-lower-case($fontNameSecond)}.woff2") format("woff2"),
+      url("../fonts/#{to-lower-case($fontNameSecond)}.woff") format("woff");
+  }
+}
+
+// Скрывает элемент из представления и удаляет его из рабочего процесса
+@mixin visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  border: 0;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+}

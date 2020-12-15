@@ -1,0 +1,102 @@
+.pagination {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  min-height: 36px;
+
+  &--full {
+    min-height: 102px;
+  }
+
+  &--float {
+    .keyboard-open & {
+      display: none;
+    }
+  }
+}
+
+.pagination__top {
+  display: flex;
+  height: 36px;
+  margin-bottom: 30px;
+}
+
+.pagination__list {
+  display: flex;
+  margin-right: 30px;
+  background-color: $ColorInput;
+}
+
+.pagination__button {
+  box-sizing: border-box;
+  min-width: 36px;
+  min-height: 36px;
+  padding: 10px 5px;
+  font-size: $fontTextSmall;
+  line-height: $lineHeightNormal;
+  color: $fontColorProductId;
+  text-align: center;
+  background-color: $ColorInput;
+  border: 1px solid transparent;
+
+  &.active {
+    background-color: $ColorSelected;
+    border: 1px solid $ColorBorder;
+  }
+
+  &--prev,
+  &--next,
+  &--top {
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      width: 0;
+      height: 0;
+      color: inherit;
+      border: 0 solid transparent;
+      border-width: 3.5px 0 3.5px 6px;
+      border-left-color: currentColor;
+    }
+  }
+
+  &--prev {
+    margin-right: 10px;
+    transform: scaleX(-1);
+  }
+
+  &--top {
+    transform: rotate(-90deg);
+
+    .pagination--float & {
+      position: fixed;
+      bottom: 0;
+      // left: 15px;
+      z-index: 5;
+      transition: bottom 0.5s;
+
+      &.shown {
+        bottom: 87px;
+
+        .page--product & {
+          bottom: 159px;
+        }
+      }
+    }
+  }
+
+  &[href]:hover,
+  &:focus {
+    color: $ColorButtonOrange;
+    outline: none;
+  }
+}
+
+.pagination__control {
+  display: flex;
+}

@@ -1,0 +1,34 @@
+.filters {
+  width: calc(100% + 10px);
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: -5px;
+
+  .menu-catalog + & {
+    margin-top: 20px;
+  }
+}
+
+.filters__item {
+  margin-right: 5px;
+  margin-bottom: 10px;
+  margin-left: 5px;
+}
+
+.filters__top {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: -10px;
+}
+
+.filters__toggles {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.filters__bottom {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  margin-bottom: -10px;
+}

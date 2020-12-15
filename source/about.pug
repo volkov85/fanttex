@@ -1,0 +1,100 @@
+extends pug/layout
+
+block variables
+  -
+    let page = {
+      title: 'О компании - Fanttex',
+      name: 'about',
+      type: 'desktop'
+    };
+
+block content
+  section.about
+    div.container
+      div.about__top
+        nav.page-nav
+          ul.page-nav__list
+            li.page-nav__item
+              a.page-nav__link(href="javascript:history.back()") Вернуться назад
+
+      div.about__main
+        h1 О компании
+        p Мы осуществляем продажу оптом трикотажного полотна и тканей производства Турции, Кореи, Китая и Индонезии. Наш товар — это сочетание высоких потребительских характеристик и умеренной цены. Ткани, предлагаемые нами, произведены в соответствии с современными технологиями и отражают последние тенденции современной моды. В наличии всегда широкий ассортимент продукции. Продажа осуществляется со складов Новосибирска и Москвы.
+
+        div.about__gallery
+          div.about__gallery-wrapper(class="swiper-container")
+            div.about__gallery-list(class="swiper-wrapper")
+              div.about__gallery-image(class="swiper-slide" itemscope itemtype="https://schema.org/ImageObject")
+                img.lozad(src="img/about_01-image-370.jpg" srcset="img/placeholder-3x3.svg 370w" sizes="370px" data-srcset="img/about_01-image-370.jpg 370w" alt="Сотрудник компании" title="Сотрудник компании" width="370" height="570" loading="lazy" decoding="async" itemprop="contentUrl")
+                meta(itemprop="datePublished" content="2020-11-23")
+                meta(itemprop="author" content="FANNTEX — ткани для одежды оптом и в нарезку")
+              div.about__gallery-image(class="swiper-slide" itemscope itemtype="https://schema.org/ImageObject")
+                img.lozad(src="img/about_02-image-370.jpg" srcset="img/placeholder-3x3.svg 370w" sizes="370px" data-srcset="img/about_02-image-370.jpg 370w" alt="Сотрудник компании" title="Сотрудник компании" width="370" height="570" loading="lazy" decoding="async" itemprop="contentUrl")
+                meta(itemprop="datePublished" content="2020-11-23")
+                meta(itemprop="author" content="FANNTEX — ткани для одежды оптом и в нарезку")
+              div.about__gallery-image(class="swiper-slide" itemscope itemtype="https://schema.org/ImageObject")
+                img.lozad(src="img/about_03-image-370.jpg" srcset="img/placeholder-3x3.svg 370w" sizes="370px" data-srcset="img/about_03-image-370.jpg 370w" alt="Сотрудник компании" title="Сотрудник компании" width="370" height="570" loading="lazy" decoding="async" itemprop="contentUrl")
+                meta(itemprop="datePublished" content="2020-11-23")
+                meta(itemprop="author" content="FANNTEX — ткани для одежды оптом и в нарезку")
+              div.about__gallery-image(class="swiper-slide" itemscope itemtype="https://schema.org/ImageObject")
+                img.lozad(src="img/about_02-image-370.jpg" srcset="img/placeholder-3x3.svg 370w" sizes="370px" data-srcset="img/about_02-image-370.jpg 370w" alt="Сотрудник компании" title="Сотрудник компании" width="370" height="570" loading="lazy" decoding="async" itemprop="contentUrl")
+                meta(itemprop="datePublished" content="2020-11-23")
+                meta(itemprop="author" content="FANNTEX — ткани для одежды оптом и в нарезку")
+
+      div.about__contacts#contacts
+        h2.h1 Контакты
+
+        div.about__contacts-main
+          div.about__contacts-info
+            p
+              | Whatsapp / Телефон: <a href="tel:+79232433399">+7 (923) 243-33-99</a><br>
+              | Телефон: <a href="tel:+73832630309">+7 (383) 263-03-09</a><br>
+              | Почта: <a href="mailto:info@fanttex.ru">info@fanttex.ru</a><br>
+              | Адрес: г. Новосибирск, ул. Электрозаводская, д.2 к.1
+            p
+              | <a href="https://vk.com/" target="_blank">Вконтакте</a> | <a href="https://ok.ru/" target="_blank">Одноклассники</a> | <a href="https://www.instagram.com/" target="_blank">Instagram</a> | <a href="https://www.facebook.com/" target="_blank">Facebook</a><br>
+              | <a href="https://telegram.org/" target="_blank">Telegram-bot</a> | <a href="https://telegram.org/" target="_blank">Telegram</a> | <a href="https://twitter.com/" target="_blank">Twitter</a> | <a href="https://www.pinterest.com/" target="_blank">Pinterest</a>
+
+            div.about__contacts-details
+              h2.h1 Реквизиты
+              p
+                | ООО «ФАНТАЗИЯ»<br>
+                | ИНН 5401966520<br>
+                | КПП 540101001<br>
+                | ОГРН 1165476167669<br>
+                | ОКПО 04742974
+              p
+                | Р/с: 40702810104500000159<br>
+                | в Филиал Точка Публичного акционерного общества Банка «Финансовая Корпорация Открытие»<br>
+                | К/с: 30101810845250000999<br>
+                | БИК: 044525999<br>
+                | Юридический адрес: 630015, г. Новосибирск, ул. Электрозаводская 2, к.1, оф.102<br>
+                | Директор – Сайко Ольга Сергеевна, на основании Устава
+
+          div.about__contacts-map
+            iframe(src="https://yandex.ru/map-widget/v1/?um=constructor%3A6d62a928fae2601fa37c3bcb83b320256c419fb70bc5408c5cbe081021e96238&amp;source=constructor" loading="lazy")
+
+      div.about__delivery#delivery
+        h2.h1 Доставка
+        ol.list-order
+          li Самовывоз со склада г. Новосибирск;
+          li Доставка по г. Новосибирск;
+          li Отправка Транспортной компанией.
+        ul.list-dot
+          li Из Новосибирска – ТК Энергия, Байкал-Сервис, Деловые линии, ПЭК, СДЭК;
+          li Из Москвы - Байкал-Сервис, Деловые линии, ПЭК, Желдоральянс, Желдорэкспедиция.
+
+        h3.h5 Стоимость доставки
+        ul.list-check
+          li Доставка по г. Новосибирск оплачивается получателем. Правый берег – 300руб (до 1,5 куб.м), Левый берег – 500 руб (до 1,5 куб.м). Стоимость доставки в отдаленные районы и грузов объемом более 1,5 куб.м рассчитывается в индивидуальном порядке;
+          li Доставка груза в Транспортную компанию г. Новосибирск, г. Москва – бесплатно;
+          li Междугородняя перевозка оплачивается получателем. Стоимость рассчитывается в соответствии с параметрами груза, тарифами ТК, скоростью и дальностью доставки.
+
+      div.about__payment#payment
+        h2.h1 Оплата
+        ol.list-order
+          li Безналичная оплата между организациями. После согласования количества товара, вы получаете счет на указанную в вашем платежном профиле электронную почту. Счет действителен в течение двух рабочих дней. В случае отправки заказа вам транспортной компанией, закрывающие документы (товарная накладная, договор поставки) мы отправляем вам вместе с товаром. Наш экземпляр этих документов вам нужно будет вернуть нам Почтой России по адресу: 630015, г. Новосибирск, ул. Электрозаводская 2, корп.1, оф.102;
+          li Безналичная оплата банковской картой;
+          li Наличная оплата в офисе.
+
+      +pagination()

@@ -1,0 +1,221 @@
+aside.filters(class=page.type === 'mobile' && filtersShow === 'selections' ? 'filters--mobile' : false)
+  div.filters__top
+    if (filtersShow !== 'selections')
+      div.select(class="filters__item")
+        div.select__dropdown
+          button.select__toggle(type="button") По новизне
+          div.select__list
+            a.select__option(href="#" data-no-swup) По популярности
+            a.select__option(href="#" data-no-swup) По возрастанию цены
+            a.select__option(href="#" data-no-swup) По убыванию цены
+
+    if (filtersShow !== 'sorting')
+      div.filters__toggles
+        label.toggle(class="toggle--selection filters__item")
+          input(type="checkbox" name="category1")
+          span Ткани в нарезку
+        label.toggle(class="toggle--selection filters__item")
+          input(type="checkbox" name="category1")
+          span Ткани от рулона
+        label.toggle(class="toggle--selection filters__item")
+          input(type="checkbox" name="category1")
+          span Однотон
+        label.toggle(class="toggle--selection filters__item")
+          input(type="checkbox" name="category1")
+          span Принт
+        label.toggle(class="toggle--selection filters__item")
+          input(type="checkbox" name="category1")
+          span Новинки
+        label.toggle(class="toggle--selection filters__item")
+          input(type="checkbox" name="category1")
+          span Со скидкой
+
+  if (filtersShow !== 'sorting')
+    div.filters__bottom
+      div.selection(class="selected selection--price filters__item" class=page.type === 'mobile' ? 'selection--accordeon' : false)
+        div.selection__dropdown
+          div.selection__field
+            button.selection__toggle(type="button")
+              | Цена<span class="selection__toggle-selected">: <span class="selection__toggle-min-price">100</span>-<span class="selection__toggle-max-price">200</span></span>
+            button.selection__button-remove(type="button" title="Очистить фильтр")
+              span.visually-hidden Очистить фильтр
+          div.selection__list
+            div.selection__range
+              input.selection__range-min(type="number" min="0" max="100500" step="1" title="Минимальная цена" aria-label="Минимальная цена")
+              input.selection__range-max(type="number" min="0" max="100500" step="1" title="Максимальная цена" aria-label="Максимальная цена")
+            div.selection__buttons
+              button.button(class="button--selection button--small selection__button-select" type="button") Применить
+
+      div.selection(class="selected selection--color filters__item" class=page.type === 'mobile' ? 'selection--accordeon' : false)
+        div.selection__dropdown
+          div.selection__field
+            button.selection__toggle(type="button")
+              | Цвет<span class="selection__toggle-selected">: <span class="selection__toggle-name"></span><span class="selection__toggle-quantity"></span></span>
+            button.selection__button-remove(type="button" title="Очистить фильтр")
+              span.visually-hidden Очистить фильтр
+          div.selection__list
+            div.selection__search
+              input(type="search" placeholder="Поиск по цвету" aria-label="Поиск по цвету")
+            div.selection__list-inner
+              label.selection__item
+                input(type="checkbox" name="color1")
+                span.selection__item-info
+                  span.selection__item-color(style="color: #f1d6c7;")
+                  span.selection__item-description
+                    span.selection__item-name Бежевый, Телесный
+                    span.selection__item-availability В наличии
+              label.selection__item
+                input(type="checkbox" name="color2" checked)
+                span.selection__item-info
+                  span.selection__item-color(style="color: #000000;")
+                  span.selection__item-description
+                    span.selection__item-name Черный
+                    span.selection__item-availability В наличии
+              label.selection__item
+                input(type="checkbox" name="color3" checked)
+                span.selection__item-info
+                  span.selection__item-color(style="color: #ffffff;")
+                  span.selection__item-description
+                    span.selection__item-name Белый, Молочный
+                    span.selection__item-availability(class="selection__item-availability--not-available") Закончился
+              label.selection__item
+                input(type="checkbox" name="color4")
+                span.selection__item-info
+                  span.selection__item-color(style="color: #f1d6c7;")
+                  span.selection__item-description
+                    span.selection__item-name Бежевый, Телесный
+                    span.selection__item-availability В наличии
+              label.selection__item
+                input(type="checkbox" name="color5")
+                span.selection__item-info
+                  span.selection__item-color(style="color: #000000;")
+                  span.selection__item-description
+                    span.selection__item-name Черный
+                    span.selection__item-availability В наличии
+              label.selection__item
+                input(type="checkbox" name="color6")
+                span.selection__item-info
+                  span.selection__item-color(style="color: #ffffff;")
+                  span.selection__item-description
+                    span.selection__item-name Белый, Молочный
+                    span.selection__item-availability(class="selection__item-availability--not-available") Закончился
+            div.selection__buttons
+              button.button(class="button--selection button--small selection__button-select" type="button") Применить
+
+      div.selection(class="selected selection--shade filters__item" class=page.type === 'mobile' ? 'selection--accordeon' : false)
+        div.selection__dropdown
+          div.selection__field
+            button.selection__toggle(type="button")
+              | Оттенок<span class="selection__toggle-selected">: <span class="selection__toggle-name"></span><span class="selection__toggle-quantity"></span></span>
+            button.selection__button-remove(type="button" title="Очистить фильтр")
+              span.visually-hidden Очистить фильтр
+          div.selection__list
+            div.selection__search
+              input(type="search" placeholder="Поиск по оттенку" aria-label="Поиск по оттенку")
+            div.selection__list-inner
+              label.selection__item
+                input(type="checkbox" name="color1" checked)
+                span.selection__item-info
+                  span.selection__item-color(style="color: #f1d6c7;")
+                  span.selection__item-description
+                    span.selection__item-name Бежевый, Телесный
+                    span.selection__item-availability В наличии
+              label.selection__item
+                input(type="checkbox" name="color2")
+                span.selection__item-info
+                  span.selection__item-color(style="color: #000000;")
+                  span.selection__item-description
+                    span.selection__item-name Черный
+                    span.selection__item-availability В наличии
+              label.selection__item
+                input(type="checkbox" name="color3")
+                span.selection__item-info
+                  span.selection__item-color(style="color: #ffffff;")
+                  span.selection__item-description
+                    span.selection__item-name Белый, Молочный
+                    span.selection__item-availability(class="selection__item-availability--not-available") Закончился
+            div.selection__buttons
+              button.button(class="button--selection button--small selection__button-select" type="button") Применить
+
+      -
+        let selection = [{
+          name: 'print',
+          text: 'Принт',
+          dative: 'принту'
+        }, {
+          name: 'group',
+          text: 'Группа',
+          dative: 'группе'
+        }, {
+          name: 'density',
+          text: 'Плотность',
+          dative: 'плотности'
+        }, {
+          name: 'composition',
+          text: 'Состав',
+          dative: 'составу'
+        }, {
+          name: 'weaving',
+          text: 'Переплетение',
+          dative: 'переплетению'
+        }, {
+          name: 'processing',
+          text: 'Тип обработки',
+          dative: 'типу обработки'
+        }, {
+          name: 'decoration',
+          text: 'Декорация',
+          dative: 'декорации'
+        }, {
+          name: 'use',
+          text: 'Применение',
+          dative: 'применению'
+        }, {
+          name: 'slicing',
+          text: 'Нарезка',
+          dative: 'нарезке'
+        }, {
+          name: 'country',
+          text: 'Страна',
+          dative: 'стране'
+        }, {
+          name: 'stock',
+          text: 'Склад',
+          dative: 'складу'
+        }];
+
+      - for (let i = 0; i < selection.length; i++)
+        div.selection(class="selection--" + selection[i].name + " filters__item" class=page.type === 'mobile' ? 'selection--accordeon' : false)
+          div.selection__dropdown
+            div.selection__field
+              button.selection__toggle(type="button")
+                | #{selection[i].text}<span class="selection__toggle-selected">: <span class="selection__toggle-name"></span><span class="selection__toggle-quantity"></span></span>
+              button.selection__button-remove(type="button" title="Очистить фильтр")
+                span.visually-hidden Очистить фильтр
+            div.selection__list
+              div.selection__search
+                input(type="search" placeholder="Поиск по " + selection[i].dative aria-label="Поиск по " + selection[i].dative)
+              div.selection__list-inner
+                label.selection__item
+                  input(type="checkbox" name="color1")
+                  span.selection__item-info
+                    span.selection__item-description
+                      span.selection__item-name Бежевый, Телесный
+                      span.selection__item-availability В наличии
+                label.selection__item
+                  input(type="checkbox" name="color2")
+                  span.selection__item-info
+                    span.selection__item-description
+                      span.selection__item-name Черный
+                      span.selection__item-availability В наличии
+                label.selection__item
+                  input(type="checkbox" name="color3")
+                  span.selection__item-info
+                    span.selection__item-description
+                      span.selection__item-name Белый, Молочный
+                      span.selection__item-availability(class="selection__item-availability--not-available") Закончился
+              div.selection__buttons
+                button.button(class="button--selection button--small selection__button-select" type="button") Применить
+
+  if (page.type === 'mobile' && filtersShow !== 'selections')
+    button.filters__mobile-open(class="shown" type="button") Фильтры

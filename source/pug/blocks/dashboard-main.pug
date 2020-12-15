@@ -1,0 +1,41 @@
+section.dashboard-panel(class="dashboard-panel--slider" data-aos="fade-in")
+  h2.dashboard-panel__title История просмотра
+  div.dashboard-panel__inner(class="swiper-container")
+    div.dashboard-panel__catalog(class="swiper-wrapper")
+      +product-card({counter: 1, imagesQuantity: 2, variantsQuantity: 20, variantSelected: 13, isFavorite: true, hasAOS: false, hasLazyLoad: false})(class="swiper-slide")
+
+      +product-card({counter: 2, name: 'Костюмная T/R «Хлоя»', id: '01.209.000', price: '332.36', variantSelected: 6, isNew: true, hasAOS: false, hasLazyLoad: false})(class="swiper-slide")
+
+      +product-card({counter: 3, name: 'Костюмная T/R', id: '01.209.000', price: '332.36', priceSale: '151.18', imagesQuantity: 4, unit: 'кг', variantSelected: 3, isNew: true, discount: 36, hasAOS: false, hasLazyLoad: false})(class="swiper-slide")
+
+      +product-card({counter: 4, name: 'Пайетки на трикотаже, двусторонние, матовые', id: '01.209.000', price: '332.36', priceSale: '151.18', variantSelected: 9, discount: 36, hasAOS: false, hasLazyLoad: false})(class="swiper-slide")
+
+      +product-card({counter: 5, isOutOfStock: true, hasAOS: false, hasLazyLoad: false})(class="swiper-slide")
+
+      - for (let i = 6; i <= 12; i++)
+        +product-card({counter: i, hasAOS: false, hasLazyLoad: false})(class="swiper-slide")
+
+section.dashboard-panel(data-aos="fade-in")
+  h2.dashboard-panel__title Текущие заказы
+  div.dashboard-panel__inner
+    div.dashboard-panel__orders
+      +order()
+
+      +order({status: 'awaiting-payment', productsQuantity: 8})
+
+section.dashboard-panel(class="dashboard-panel--slider" data-aos="fade-in")
+  h2.dashboard-panel__title Избранное
+  div.dashboard-panel__inner(class="swiper-container")
+    div.dashboard-panel__catalog(class="swiper-wrapper")
+      +product-card({counter: 1, imagesQuantity: 2, variantsQuantity: 20, variantSelected: 13, isFavorite: true, hasAOS: false})(class="swiper-slide")
+
+      +product-card({counter: 2, name: 'Костюмная T/R «Хлоя»', id: '01.209.000', price: '332.36', variantSelected: 6, isFavorite: true, isNew: true, hasAOS: false})(class="swiper-slide")
+
+      +product-card({counter: 3, name: 'Костюмная T/R', id: '01.209.000', price: '332.36', priceSale: '151.18', imagesQuantity: 4, unit: 'кг', variantSelected: 3, isFavorite: true, isNew: true, discount: 36, hasAOS: false})(class="swiper-slide")
+
+      +product-card({counter: 4, name: 'Пайетки на трикотаже, двусторонние, матовые', id: '01.209.000', price: '332.36', priceSale: '151.18', variantSelected: 9, isFavorite: true, discount: 36, hasAOS: false})(class="swiper-slide")
+
+      +product-card({counter: 5, isOutOfStock: true, isFavorite: true, hasAOS: false})(class="swiper-slide")
+
+      - for (let i = 6; i <= 12; i++)
+        +product-card({counter: i, isFavorite: true, hasAOS: false})(class="swiper-slide")

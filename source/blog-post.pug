@@ -1,0 +1,92 @@
+extends pug/layout
+
+block variables
+  -
+    let page = {
+      title: 'Запись блога - Fanttex',
+      name: 'blog-post',
+      type: 'desktop'
+    };
+
+block content
+  article.blog-post
+    div.container
+      div.blog-post__top
+        nav.page-nav
+          ul.page-nav__list
+            li.page-nav__item
+              a.page-nav__link(href="javascript:history.back()") Вернуться назад
+
+      div.blog-post__main
+        div.blog-post__info
+          h1 Заголовок какой-то записи блога
+
+          div.blog-post__meta
+            p.blog-post__date Опубликовано: <time datetime="2020-11-23T03:57">23.11.2020 в 03:57</time>
+
+            div.share
+              div.share__dropdown
+                button.share__toggle(type="button" title="Поделиться")
+                  span.visually-hidden Поделиться
+                div.share__list(class="social social--share")
+                  ul.social__list
+                    li.social__item
+                      a.social__link(class="social__link--vk" href="javascript:void(0)" onclick="window.open('http://vk.com/share.php?url=https://fanttex.webcreator.top/blog-post.html&title=Заголовок какой-то записи блога&description=link+from+fanttex.webcreator.top&noparse=true', '', 'scrollbars=1'); return false;" data-no-swup)
+                        span Вконтакте
+                    li.social__item
+                      a.social__link(class="social__link--fb" href="javascript:void(0)" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https://fanttex.webcreator.top/blog-post.html&title=Заголовок какой-то записи блога&quote=link+from+fanttex.webcreator.top&description=link+from+fanttex.webcreator.top', '', 'scrollbars=1');return false;" data-no-swup)
+                        span Facebook
+                    li.social__item
+                      a.social__link(class="social__link--tw" href="javascript:void(0)" onclick="window.open('http://twitter.com/share?text=https://fanttex.webcreator.top/blog-post.html', '', 'scrollbars=1'); return false;" data-no-swup)
+                        span Twitter
+                    li.social__item
+                      a.social__link(class="social__link--tg" href="javascript:void(0)" onClick="window.open('https://telegram.me/share/url?url=https://fanttex.webcreator.top/blog-post.html','','scrollbars=1'); return false;" data-no-swup)
+                        span Telegram
+                    li.social__item
+                      a.social__link(class="social__link--ok" href="javascript:void(0)" onclick="window.open('https://connect.ok.ru/offer?url=https://fanttex.webcreator.top/blog-post.html', '', 'scrollbars=1'); return false;" data-no-swup)
+                        span Одноклассники
+                    li.social__item
+                      a.social__link(class="social__link--mail" href="mailto:?subject=Поделиться ссылкой на страницу&amp;body=https://fanttex.webcreator.top/blog-post.html" data-no-swup)
+                        span Почта
+                    li.social__item
+                      a.social__link(class="social__link--link" href="#" data-clipboard="https://fanttex.webcreator.top/blog-post.html" data-no-swup)
+                        span Скопировать ссылку
+
+        div.blog-post__content
+          p Мы осуществляем продажу оптом трикотажного полотна и тканей производства Турции, Кореи, Китая и Индонезии. Наш товар — это сочетание высоких потребительских характеристик и умеренной цены. Ткани, предлагаемые нами, произведены в соответствии с современными технологиями и отражают последние тенденции современной моды. В наличии всегда широкий ассортимент продукции. Продажа осуществляется со складов Новосибирска и Москвы.
+
+          h2 Подзаголовок второго уровня
+
+          div.blog-post__image(itemscope itemtype="https://schema.org/ImageObject")
+            picture
+              source(srcset="https://via.placeholder.com/1160x313.jpg" media="(min-width: 1500px)")
+              source(srcset="https://via.placeholder.com/860x313.jpg" media="(min-width: 1200px)")
+              img(src="https://via.placeholder.com/560x313.jpg" alt="Заголовок какой-то записи блога" width="520" height="313" loading="lazy" title="Заголовок какой-то записи блога" decoding="async" itemprop="contentUrl")
+            meta(itemprop="datePublished" content="2020-11-23")
+            meta(itemprop="author" content="FANNTEX — ткани для одежды оптом и в нарезку")
+
+        div.blog-post__slider(class="swiper-container" data-aos="fade-in")
+          div.blog-post__slider-wrapper(class="swiper-wrapper")
+            +product-card({counter: 1, imagesQuantity: 2, variantsQuantity: 20, variantSelected: 13, isFavorite: true, hasAOS: false})(class="swiper-slide")
+
+            +product-card({counter: 2, name: 'Костюмная T/R «Хлоя»', id: '01.209.000', price: '332.36', variantSelected: 6, isNew: true, hasAOS: false})(class="swiper-slide")
+
+            +product-card({counter: 3, name: 'Костюмная T/R', id: '01.209.000', price: '332.36', priceSale: '151.18', imagesQuantity: 4, unit: 'кг', variantSelected: 3, isNew: true, discount: 36, hasAOS: false})(class="swiper-slide")
+
+            +product-card({counter: 4, name: 'Пайетки на трикотаже, двусторонние, матовые', id: '01.209.000', price: '332.36', priceSale: '151.18', variantSelected: 9, discount: 36, hasAOS: false})(class="swiper-slide")
+
+            +product-card({counter: 5, isOutOfStock: true, hasAOS: false})(class="swiper-slide")
+
+            - for (let i = 6; i <= 12; i++)
+              +product-card({counter: i, hasAOS: false})(class="swiper-slide")
+
+      div.blog-post__bottom
+        ul.blog-tags
+          li.blog-tags__tag
+            a(href="#") Тег один
+          li.blog-tags__tag
+            a(href="#") Тег два
+          li.blog-tags__tag
+            a(href="#") Тег три
+
+      +pagination()

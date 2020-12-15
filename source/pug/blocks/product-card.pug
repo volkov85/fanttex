@@ -1,0 +1,101 @@
+-
+  let productCardClasses = [];
+
+  if (isOutOfStock) productCardClasses.push('out-of-stock');
+  if (isInCart) productCardClasses.push('in-cart total-price');
+  if (isFavorite) productCardClasses.push('favorite');
+  if (isNew) productCardClasses.push('product-card--new');
+  if (discount) productCardClasses.push('product-card--sale');
+
+  let dataFavorites = {};
+
+  for (let i = 1; i <= variantsQuantity; i++) {
+    dataFavorites[String(i)] = (isFavorite && variantSelected === i) ? '1' : '0';
+  }
+
+div.product-card(class=productCardClasses data-discount=discount data-variant=variantSelected data-favorites=JSON.stringify(dataFavorites) data-aos=hasAOS ? 'fade-in' : false)&attributes(attributes)
+  div.product-card__inner
+    div.product-card__image
+      div.product-card__previews(class="swiper-container")
+        div.product-card__previews-list(class="swiper-wrapper")
+          - for (let i = 1; i <= imagesQuantity; i++)
+            div.product-card__preview(class="swiper-slide" itemscope itemtype="https://schema.org/ImageObject")
+              a(href=page.type === 'mobile' ? './product-mobile.html' : '#' data-no-swup=page.type === 'desktop' ? true : false)
+                if hasLazyLoad
+                  img.lozad(src=`img/product_${String(counter).padStart(2, '0')}-card-thumb-${String(variantSelected).padStart(2, '0')}${page.type === 'mobile' ? '-mobile' : ''}.jpg` srcset=page.type === 'mobile' ? 'img/placeholder-3x2.svg 330w' : 'img/placeholder-3x3.svg 218w' sizes=page.type === 'mobile' ? '330px' : '218px' data-srcset=`img/product_${String(counter).padStart(2, '0')}-card-thumb-${String(variantSelected).padStart(2, '0')}${page.type === 'mobile' ? '-mobile' : ''}.jpg ${page.type === 'mobile' ? '330w' : '218w'}` alt=name title=name width=page.type === 'mobile' ? '330' : '218' height="218" loading="lazy" decoding="async" itemprop="contentUrl")
+                else
+                  img(src=`img/product_${String(counter).padStart(2, '0')}-card-thumb-${String(variantSelected).padStart(2, '0')}${page.type === 'mobile' ? '-mobile' : ''}.jpg` alt=name title=name width=page.type === 'mobile' ? '330' : '218' height="218" loading="lazy" decoding="async" itemprop="contentUrl")
+              meta(itemprop="datePublished" content="2020-11-23")
+              meta(itemprop="author" content="FANNTEX — ткани для одежды оптом и в нарезку")
+
+        div.product-card__previews-pagination(class="previews-pagination")
+
+      button.product-card__add-favorites(class="add-favorites-btn" type="button" title=isFavorite ? 'Удалить из избранного' : 'Добавить в избранное')
+        span.visually-hidden #{isFavorite ? 'Удалить из избранного' : 'Добавить в избранное'}
+
+    div.product-card__info
+      p.product-card__id #{id}
+      h2.product-card__title #{name}
+      h3.product-card__price <span>от </span><b class="price-total"><span class="price-integer">#{price.split('.')[0]}</span><sup class="price-fraction">#{price.split('.')[1]}</sup></b> руб./#{unit}
+      - if (priceSale)
+        h3.product-card__price(class="product-card__price--sale") <span>от </span><b class="price-total-sale"><span class="price-integer">#{priceSale.split('.')[0]}</span><sup class="price-fraction">#{priceSale.split('.')[1]}</sup></b> руб./#{unit}
+      - if (isOutOfStock)
+        p.product-card__not-avaliable Закончился
+
+    div.product-card__add
+      div.product-card__color-list
+        -
+          let variantNames = [
+            'Белый, Молочный',
+            'Черный',
+            'Бежевый, Телесный'
+          ];
+        - for (let i = 1, j = 0; i <= variantsQuantity; i++, j++)
+          -
+            if (!variantNames[j]) j = 0;
+            let name = variantNames[j];
+          a.product-card__color(class=i === variantSelected ? 'selected' : false href="#" id=`color${String(counter).padStart(2, '0')}_${String(i).padStart(2, '0')}` title=name data-color="color" + String(i).padStart(2, '0') data-no-swup)
+            img.lozad(src=`img/product_${String(counter).padStart(2, '0')}-card-variant-${String(i).padStart(2, '0')}.jpg` srcset="img/placeholder-3x3.svg 40w" sizes="40px" data-srcset=`img/product_${String(counter).padStart(2, '0')}-card-variant-${String(i).padStart(2, '0')}.jpg 40w` alt=name width="40" height="40" loading="lazy" decoding="async")
+
+      div.product-amount(class="minimum")
+        div.product-amount__dropdown
+          div.product-amount__field
+            input(type="text" name="amount" data-min="5" data-max="1000" data-unit=unit spellcheck="false" title="Количество ткани" aria-label="Количество ткани")
+            div.product-amount__control
+              button.product-amount__button-remove(type="button" title="Удалить из корзины")
+                span.visually-hidden Удалить из корзины
+              button.product-amount__button-decrease(type="button" title="Уменьшить количество")
+                span.visually-hidden Уменьшить количество
+              button.product-amount__button-increase(type="button" title="Увеличить количество")
+                span.visually-hidden Увеличить количество
+          div.product-amount__list
+            button.product-amount__button-remove-cart(type="button") Удалить из корзины
+            div.product-amount__inner
+              p.product-amount__list-title
+                span #{unit === 'м' ? 'Длина' : 'Вес'}
+                span Цена за 1 #{unit}
+              div.product-amount__options
+                a.product-amount__option(href="#" data-no-swup)
+                  span.product-amount__quantity 5 #{unit}
+                  span.product-amount__price 433<sup>30</sup> руб.
+                  span.product-amount__discount +5%
+                a.product-amount__option(href="#" data-no-swup)
+                  span.product-amount__quantity 25 #{unit}
+                  span.product-amount__price 412<sup>67</sup> руб.
+                a.product-amount__option(href="#" data-no-swup)
+                  span.product-amount__quantity 100 #{unit}
+                  span.product-amount__price 400<sup>30</sup> руб.
+                  span.product-amount__discount -3%
+                a.product-amount__option(href="#" data-no-swup)
+                  span.product-amount__quantity 300 #{unit}
+                  span.product-amount__price 392<sup>04</sup> руб.
+                  span.product-amount__discount -5%
+                a.product-amount__option(href="#" data-no-swup)
+                  span.product-amount__quantity 500 #{unit}
+                  span.product-amount__price 383<sup>79</sup> руб.
+                  span.product-amount__discount -7%
+
+      button.button(class="button--final button--small product-card__add-cart add-cart-btn" type="button") В корзину
+      button.button(class="button--small product-card__out-of-stock out-of-stock-btn" type="button") #{isFavorite ? 'В избранном' : 'Отследить наличие'}
+      if page.type === 'desktop'
+        a.product-card__link(href=`./product${page.type === 'mobile' ? '-mobile' : ''}.html`) Перейти на полную страницу

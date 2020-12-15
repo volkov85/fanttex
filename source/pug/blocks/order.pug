@@ -1,0 +1,38 @@
+-
+  let statusMessages = {
+    'processing': 'Получен, обрабатывается менеджером',
+    'awaiting-payment': 'Обработан, ожидается оплата',
+    'paid': 'Оплачен, формируется к отправке',
+    'shipped': 'Отгружен',
+    'finished': 'Выполнен',
+    'canceled': 'Отменен'
+  };
+
+div.order(class=`order--${status} shown`)&attributes(attributes)
+  h3.order__title Заказ № 15616 от 31.08.2020
+  div.order__inner
+    table.order__table
+      tbody
+        - for (let i = 1; i <= productsQuantity; i++)
+          tr.order__item
+            td.order__item-name Артикул: <span class="product-id">01.125.00-02</span> — <span class="product-name">Футер 3х-нитка, петля-диагональ</span> — <span class="product-color">Бежевый, Телесный</span>
+            td.order__item-amount 1000 м
+            td.order__item-price <span class="product-price"><span class="price-integer">10 258 724</span><sup class="price-fraction">36</sup></span> руб.
+
+    ul.order__links
+      li.order__status Статус: <span class="order-status">#{statusMessages[status]}</span>
+
+      if status === 'awaiting-payment'
+        li.order__payment
+          a(href=`./order-payment${page.type === 'mobile' ? '-mobile' : ''}.html`) Оплатить
+
+      if status === 'processing' || status === 'awaiting-payment' || status === 'paid'
+        li.order__edit
+          a(href=`./order-edit${page.type === 'mobile' ? '-mobile' : ''}.html`) Редактировать заказ
+        li.order__cancel
+          a(href=`./order-cancel${page.type === 'mobile' ? '-mobile' : ''}.html`) Отменить заказ
+      else
+        li.order__more
+          a(href="#" data-no-swup) Подробнее о заказе
+        li.order__cancel
+          a(href="#" data-no-swup) Повторить заказ

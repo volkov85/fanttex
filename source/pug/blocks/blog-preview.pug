@@ -1,0 +1,38 @@
+article.blog-preview(data-aos=hasAOS ? 'fade-in' : false)
+  header.blog-preview__top
+    h2.h5 <a href="#{`./blog-post${page.type === 'mobile' ? '-mobile' : ''}.html`}">Блог компании или другое название блоголенты</a>
+    p.blog-preview__date Опубликовано: <time datetime="2020-11-23T03:57">23.11.2020 в 03:57</time>
+
+  div.blog-preview__content
+    div.blog-preview__excerpt
+      p Мы осуществляем продажу оптом трикотажного полотна и тканей производства Турции, Кореи, Китая и Индонезии. Наш товар — это сочетание высоких потребительских характеристик и умеренной цены. Ткани, предлагаемые нами, произведены в соответствии с современными технологиями и отражают последние тенденции современной моды. В наличии всегда широкий ассортимент продукции. Продажа осуществляется со складов Новосибирска и Москвы.
+
+    div.blog-preview__image(itemscope itemtype="https://schema.org/ImageObject")
+      a(href=`./blog-post${page.type === 'mobile' ? '-mobile' : ''}.html`)
+        if hasLazyLoad
+          if page.type === 'mobile'
+            img.lozad(src="https://via.placeholder.com/330x313.jpg" srcset="img/placeholder-3x3.svg 330w" sizes="330px" data-srcset="https://via.placeholder.com/330x313.jpg 330w" alt="Блог компании или другое название блоголенты" width="330" height="313" loading="lazy" title="Блог компании или другое название блоголенты" decoding="async" itemprop="contentUrl")
+          else
+            picture
+              source(srcset="https://via.placeholder.com/1160x313.jpg" media="(min-width: 1500px)")
+              source(srcset="https://via.placeholder.com/860x313.jpg" media="(min-width: 1200px)")
+              img(src="https://via.placeholder.com/560x313.jpg" alt="Блог компании или другое название блоголенты" width="520" height="313" loading="lazy" title="Блог компании или другое название блоголенты" decoding="async" itemprop="contentUrl")
+        else
+          if page.type === 'mobile'
+            img(src="https://via.placeholder.com/330x313.jpg" alt="Блог компании или другое название блоголенты" width="330" height="313" loading="lazy" title="Блог компании или другое название блоголенты" decoding="async" itemprop="contentUrl")
+          else
+            picture
+              source(srcset="https://via.placeholder.com/1160x313.jpg" media="(min-width: 1500px)")
+              source(srcset="https://via.placeholder.com/860x313.jpg" media="(min-width: 1200px)")
+              img(src="https://via.placeholder.com/560x313.jpg" alt="Блог компании или другое название блоголенты" width="520" height="313" loading="lazy" title="Блог компании или другое название блоголенты" decoding="async" itemprop="contentUrl")
+      meta(itemprop="datePublished" content="2020-11-23")
+      meta(itemprop="author" content="FANNTEX — ткани для одежды оптом и в нарезку")
+
+  footer.blog-preview__bottom
+    ul.blog-tags
+      li.blog-tags__tag
+        a(href="#") Тег один
+      li.blog-tags__tag
+        a(href="#") Тег два
+      li.blog-tags__tag
+        a(href="#") Тег три

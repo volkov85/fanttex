@@ -1,0 +1,75 @@
+header.header#swup-header(itemscope itemtype="https://schema.org/Store" itemref="contactInfo")
+  div.header__top
+    div.container
+      div.logo
+        - let prefix = page.type === 'mobile' ? '-mobile' : '';
+        a(href=page.name !== 'index' ? './index' + prefix + '.html' : false)
+          div(itemprop="logo" itemscope itemtype="https://schema.org/ImageObject")
+            img(src="img/logo.svg" alt="Логотип Fanttex" title="Логотип Fanttex" width="39" height="39" decoding="async" itemprop="contentUrl")
+            meta(itemprop="datePublished" content="2020-11-23")
+            meta(itemprop="author" content="FANNTEX — ткани для одежды оптом и в нарезку")
+          span(itemprop="name") Fanttex
+        link(itemprop="url" href="./index.html")
+        link(itemprop="hasMap" href="https://goo.gl/maps/tU4d6wjqmuxmSxvC7")
+        - let imageSrc = page.name === 'product' ? 'img/product_01-image-870-01.jpg' : page.name === 'about' ? 'img/about_01-image-370.jpg' : page.name === 'blog-post' ? 'https://via.placeholder.com/770x313.jpg' : 'img/logo.svg';
+        meta(itemprop="image" content=imageSrc)
+        meta(itemprop="currenciesAccepted" content="RUR")
+        meta(itemprop="paymentAccepted" content="наличные, банковские карты")
+        meta(itemprop="openingHours" content="Mo-Su 08:00-22:00")
+
+      if page.type === 'desktop'
+        nav.menu-main(class="menu-main--header")
+          ul.menu-main__list
+            li.menu-main__item
+              a.menu-main__link(href=`./about${page.type === 'mobile' ? '-mobile' : ''}.html`) О компании
+            li.menu-main__item
+              a.menu-main__link(href=`./about${page.type === 'mobile' ? '-mobile' : ''}.html#delivery`) Доставка
+            li.menu-main__item
+              a.menu-main__link(href=`./about${page.type === 'mobile' ? '-mobile' : ''}.html#payment`) Оплата
+            li.menu-main__item
+              a.menu-main__link(href=`./about${page.type === 'mobile' ? '-mobile' : ''}.html#contacts`) Контакты
+
+      a.header__phone(href="tel:+73832630309") +7 (383) 263-03-09
+
+  div.header__middle
+    div.container
+      include search
+
+      if page.type === 'desktop'
+        nav.menu-profile(class="menu-profile--header")
+          ul.menu-profile__list
+            li.menu-profile__item
+              a.menu-profile__link(class="menu-profile__link--favorites" href=`./favorites${page.type === 'mobile' ? '-mobile' : ''}.html` title="Понравилось" data-counter="2")
+                span.visually-hidden Понравилось
+            li.menu-profile__item
+              a.menu-profile__link(class="menu-profile__link--profile" href=`./dashboard${page.type === 'mobile' ? '-mobile' : ''}.html` title="Личный кабинет")
+                span.visually-hidden Личный кабинет
+            li.menu-profile__item
+              a.menu-profile__link(class="menu-profile__link--orders" href=`./orders${page.type === 'mobile' ? '-mobile' : ''}.html` title="Заказы" data-counter="12")
+                span.visually-hidden Заказы
+            li.menu-profile__item
+              a.menu-profile__link(class="menu-profile__link--cart" href=`./cart${page.type === 'mobile' ? '-mobile' : ''}.html` title="Корзина" data-counter="72")
+                span.visually-hidden Корзина
+
+  div.header__bottom
+    div.container
+      nav.menu-categories(class=`menu-categories--header ${page.type === 'mobile' ? 'swiper-container' : ''}`)
+        ul.menu-categories__list(class=page.type === 'mobile' ? 'swiper-wrapper' : false)
+          li.menu-categories__item(class=page.type === 'mobile' ? 'swiper-slide' : false)
+            a.menu-categories__link(class="menu-categories__link--menu" href="#" data-no-swup) Все ткани
+          li.menu-categories__item(class=page.type === 'mobile' ? 'swiper-slide' : false)
+            a.menu-categories__link(href=`./catalog${page.type === 'mobile' ? '-mobile' : ''}.html`) Плательные ткани
+          li.menu-categories__item(class=page.type === 'mobile' ? 'swiper-slide' : false)
+            a.menu-categories__link(href=`./catalog${page.type === 'mobile' ? '-mobile' : ''}.html`) Евро Ангора
+          li.menu-categories__item(class=page.type === 'mobile' ? 'swiper-slide' : false)
+            a.menu-categories__link(href=`./catalog${page.type === 'mobile' ? '-mobile' : ''}.html`) Штапель
+          li.menu-categories__item(class=page.type === 'mobile' ? 'swiper-slide' : false)
+            a.menu-categories__link(href=`./catalog${page.type === 'mobile' ? '-mobile' : ''}.html`) Шелк Армани
+          li.menu-categories__item(class=page.type === 'mobile' ? 'swiper-slide' : false)
+            a.menu-categories__link(href=`./catalog${page.type === 'mobile' ? '-mobile' : ''}.html`) Ткани от 5м
+          li.menu-categories__item(class=page.type === 'mobile' ? 'swiper-slide' : false)
+            a.menu-categories__link(href=`./catalog${page.type === 'mobile' ? '-mobile' : ''}.html`) Неопрен
+          li.menu-categories__item(class=page.type === 'mobile' ? 'swiper-slide' : false)
+            a.menu-categories__link(href=`./catalog${page.type === 'mobile' ? '-mobile' : ''}.html`) Вышивка на сетке
+          li.menu-categories__item(class=page.type === 'mobile' ? 'swiper-slide' : false)
+            a.menu-categories__link(href=`./catalog${page.type === 'mobile' ? '-mobile' : ''}.html`) Костюмные ткани

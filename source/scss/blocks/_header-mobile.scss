@@ -1,0 +1,55 @@
+.header {
+  position: relative;
+  z-index: 5;
+  background-color: $ColorPrimary;
+}
+
+.header__top {
+  padding-top: 30px;
+  padding-bottom: 15px;
+
+  .container {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.header__phone {
+  margin-bottom: 5px;
+  margin-left: auto;
+  font-size: $fontTextSmall;
+  line-height: $lineHeightNormal;
+
+  &:hover,
+  &:focus {
+    color: $ColorButtonOrange;
+    outline: none;
+  }
+}
+
+.header__middle {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 15;
+  display: none;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: $ColorPrimary;
+
+  .container {
+    max-width: none;
+    padding: 0;
+  }
+
+  &.shown {
+    display: block;
+    animation: 0.5s both move-down;
+  }
+}
+
+.header__bottom {
+  padding-top: 15px;
+  padding-bottom: 30px;
+}

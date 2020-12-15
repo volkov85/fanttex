@@ -1,0 +1,392 @@
+html {
+  overflow: hidden auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  font-weight: $fontBold;
+  line-height: $lineHeightNormal;
+}
+
+.h1,
+.h2,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  margin-bottom: 1em;
+}
+
+h1,
+.h1 {
+  font-size: $fontTextH1;
+}
+
+h2,
+.h2 {
+  font-size: $fontTextH2;
+}
+
+h3,
+.h3 {
+  font-size: $fontTextH3;
+}
+
+h4,
+.h4 {
+  font-size: $fontTextHuge;
+}
+
+h5,
+.h5 {
+  font-size: $fontTextLarge;
+}
+
+h6,
+.h6 {
+  font-size: $fontTextMedium;
+}
+
+sub,
+sup {
+  font-size: 63%;
+}
+
+a {
+  color: $fontColorGrey;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+p {
+  max-width: 870px;
+}
+
+.list-order {
+  box-sizing: border-box;
+  max-width: 870px;
+  list-style: none;
+  counter-reset: counter;
+
+  li {
+    position: relative;
+    counter-increment: counter;
+
+    &::before {
+      content: counter(counter, decimal-leading-zero);
+      position: absolute;
+      left: -28px;
+      font-weight: $fontBold;
+      color: $ColorScrollbar;
+    }
+  }
+}
+
+.list-dot {
+  box-sizing: border-box;
+  max-width: 870px;
+  list-style: none;
+
+  li {
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 10px;
+      left: -22px;
+      width: 6px;
+      height: 6px;
+      background-color: $ColorRed;
+      border-radius: 50%;
+    }
+  }
+}
+
+.list-check {
+  box-sizing: border-box;
+  max-width: 870px;
+  list-style: none;
+
+  li {
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 6px;
+      left: -24px;
+      width: 12px;
+      height: 12px;
+      background: url("../img/icon-check-list.svg") center / contain no-repeat;
+    }
+  }
+}
+
+.text-small {
+  font-weight: $fontRegular;
+  font-size: $fontTextSmall;
+  line-height: $lineHeightNormal;
+  color: $fontColorGrey;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+// Элементы форм
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"],
+input[type="url"],
+input[type="search"],
+input[type="number"],
+textarea {
+  font: inherit;
+  line-height: $lineHeightNormal;
+  color: inherit;
+  background-color: $ColorInput;
+  border: 1px solid transparent;
+}
+
+input[type="number"] {
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    margin: 0;
+    appearance: none;
+  }
+}
+
+.form-field {
+  position: relative;
+  display: block;
+  width: 100%;
+  min-height: 72px;
+
+  input,
+  textarea {
+    box-sizing: border-box;
+    width: 100%;
+    height: 72px;
+    padding: 30px 30px 20px;
+    appearance: none;
+
+    &:focus {
+      outline: none;
+
+      + span {
+        transform: translateY(-10px) scale(0.86);
+      }
+    }
+  }
+
+  textarea {
+    height: 164px;
+    padding-top: 32px;
+    resize: none;
+  }
+
+  &.filled {
+    input,
+    textarea {
+      background-color: $ColorSelected;
+      border-color: $ColorBorder;
+
+      + span {
+        transform: translateY(-10px) scale(0.86);
+      }
+    }
+  }
+
+  &.invalid {
+    input,
+    textarea {
+      border-color: $ColorRed;
+    }
+  }
+
+  &.verification {
+    input,
+    textarea {
+      padding-right: 110px;
+    }
+
+    .form-field-verify {
+      display: block;
+    }
+  }
+
+  &.verified {
+    input,
+    textarea {
+      background-color: $ColorInputVerified;
+      border-color: $ColorButtonGreen;
+    }
+
+    &::before {
+      content: "Подтвержден";
+      position: absolute;
+      top: 50%;
+      right: 20px;
+      font-size: $fontTextSmall;
+      line-height: $lineHeightNormal;
+      color: $ColorButtonGreen;
+      transform: translateY(-50%);
+      pointer-events: none;
+    }
+
+    .form-field-verify {
+      display: none;
+    }
+  }
+
+  &.invalid-email {
+    &::before {
+      content: "Некорректный e-mail";
+      position: absolute;
+      top: 50%;
+      right: 20px;
+      font-size: $fontTextSmall;
+      line-height: $lineHeightNormal;
+      color: $ColorRed;
+      transform: translateY(-50%);
+      pointer-events: none;
+    }
+
+    .form-field-verify {
+      display: none;
+    }
+  }
+
+  span {
+    position: absolute;
+    top: 28px;
+    left: 31px;
+    max-width: calc(100% - 60px);
+    line-height: $lineHeightNormal;
+    transform-origin: left;
+    transition: transform 0.3s;
+    pointer-events: none;
+    user-select: none;
+  }
+}
+
+.form-field-verify {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  display: none;
+  font-size: $fontTextSmall;
+  line-height: $lineHeightNormal;
+  color: inherit;
+  transform: translateY(-50%);
+
+  &:hover,
+  &:focus {
+    color: $ColorButtonOrange;
+    outline: none;
+  }
+}
+
+.form-check {
+  position: relative;
+  min-height: 18px;
+  padding-top: 2px;
+  padding-left: 30px;
+  font-size: $fontTextSmall;
+  line-height: $lineHeightNormal;
+  cursor: pointer;
+
+  input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 18px;
+    height: 18px;
+    opacity: 0;
+    cursor: pointer;
+    appearance: none;
+
+    &:checked + span {
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 18px;
+        height: 18px;
+        background: url("../img/icon-check.svg") center / 8px no-repeat;
+      }
+    }
+  }
+
+  &.invalid {
+    span {
+      &::before {
+        border-color: $ColorRed;
+      }
+    }
+  }
+
+  span {
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 16px;
+      height: 16px;
+      background-color: $ColorInput;
+      border: 1px solid transparent;
+    }
+  }
+}
+
+// Эффект затухания для Swup
+.transition-fade {
+  transition: opacity 0.4s;
+  opacity: 1;
+
+  html.is-animating & {
+    opacity: 0;
+  }
+}
+
+// Стилизация элементов PhotoSwipe
+.pswp__counter {
+  display: none;
+}
+
+.pswp__button {
+  &--close {
+    background: url("../img/icon-cross.svg") center / 18px no-repeat !important;
+  }
+
+  &--share,
+  &--fs,
+  &--zoom,
+  &--arrow--left,
+  &--arrow--right {
+    display: none !important;
+  }
+}

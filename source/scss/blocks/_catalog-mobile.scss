@@ -1,0 +1,35 @@
+.catalog {
+  margin-top: 30px;
+  margin-bottom: 30px;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  .page--search & {
+    margin-bottom: 60px;
+  }
+}
+
+.catalog__list {
+  margin-top: 30px;
+  margin-bottom: 30px;
+
+  .catalog--variants & {
+    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 150px);
+    grid-auto-rows: auto;
+    gap: 20px calc(100% - 150px * 2);
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 20px;
+  }
+}
+
+.catalog__banner {
+  min-height: 100px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}

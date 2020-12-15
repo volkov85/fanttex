@@ -1,0 +1,199 @@
+block variables
+
+include mixins
+
+doctype html
+html(lang="ru")
+  head
+    block head
+      meta(charset="utf-8")
+      title= page.title
+      meta(name="viewport" content="width=device-width, initial-scale=1")
+      link(rel="preload" href="fonts/noah-regular.woff2" as="font" crossorigin="anonymous")
+      link(rel="preload" href="fonts/gilroy-extrabold.woff2" as="font" crossorigin="anonymous")
+      link(rel="preload" href=`css/style${page.type === 'mobile' ? '-mobile' : ''}.min.css` as="style")
+      link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+      link(rel="stylesheet" href=`css/style${page.type === 'mobile' ? '-mobile' : ''}.min.css`)
+
+  -
+    let bodyClasses = [];
+
+    if (page.name === 'index') {
+      bodyClasses.push('page--index')
+    } else {
+      bodyClasses.push('page--inner');
+      bodyClasses.push(`page--${page.name}`);
+    }
+
+    bodyClasses.push(`page--${page.type}`);
+
+    if (dashboard) {
+      bodyClasses.push(`page--dashboard-${dashboard}`)
+    }
+
+  body.page#top(class=bodyClasses)
+    block header
+      include blocks/header
+
+    main
+      div.transition-fade#swup-main
+        block content
+
+        block additionals
+          if page.type === 'mobile' && (page.name === 'index' || page.name === 'catalog' || page.name === 'search')
+            include blocks/filters-nav
+
+          if page.name === 'product' || page.name === 'cart' || (page.name === 'dashboard' && dashboard === 'order-edit')
+            include blocks/pswp
+
+      block main-nav
+        include blocks/main-nav
+
+      block mobile-nav
+        if page.type === 'mobile'
+          include blocks/mobile-nav
+
+    block footer
+      include blocks/footer
+
+    div.overlay#swup-overlay
+      block popups
+        if !(page.name === 'dashboard' || page.name === 'cart' || page.name === 'cart-success' || page.name === 'registration' || page.name === 'authorization' || page.name === 'forgot-password')
+          +popup('subscription-authorization')
+
+        if page.type === 'desktop' && (page.name === 'index' || page.name === 'catalog' || page.name === 'search' || (page.name === 'dashboard' && (dashboard === 'main' || dashboard === 'favorites')))
+          +popup('product')
+
+        if page.name === 'dashboard' && dashboard === 'profile'
+          +popup('verification')
+
+      div.overlay__bg
+
+    block scripts
+      script(src="js/vendors/lozad.min.js")
+      script(src="js/vendors/swup.min.js")
+      script(src="js/vendors/SwupScrollPlugin.min.js")
+      script(src="js/vendors/SwupBodyClassPlugin.min.js")
+      script(src="js/vendors/swiper-bundle.min.js")
+      script(src="js/vendors/lottie_svg.min.js")
+      script(src="js/vendors/aos.js")
+      script(src="js/vendors/imask.min.js")
+      script(src="js/vendors/photoswipe.min.js")
+      script(src="js/vendors/photoswipe-ui-default.min.js")
+      script(src=`js/script${page.type === 'mobile' ? '-mobile' : ''}.min.js`)
+      if page.type === 'desktop'
+        script.
+          window.initBanner();
+          window.initAboutSlider();
+          window.initLozad();
+
+          window.setTimeout(function() {
+            window.initDashboardPage();
+            window.initBlog();
+            window.initPopup();
+            window.initMainNav();
+            window.initHeader();
+            window.initSearch();
+            window.initAOS();
+            window.initProductPage();
+            window.initCartPage();
+            window.initBillingProfile();
+            window.initSelects();
+            window.initFilters();
+            window.initProductCards();
+            window.initPagination();
+            window.initShare();
+            window.initForms();
+            window.initProfile();
+          }, 2000);
+
+          var swup = new Swup({
+            linkSelector: 'a[href^="' + window.location.origin + '"]:not([data-no-swup]), a[href^="/"]:not([data-no-swup]), a[href^="./"]:not([data-no-swup]), a[href^="../"]:not([data-no-swup]), a[href^="#"]:not([data-no-swup])',
+            containers: ['#swup-main', '#swup-header', '#swup-footer', '#swup-overlay'],
+            plugins: [new SwupScrollPlugin(), new SwupBodyClassPlugin()]
+          });
+
+          swup.on('contentReplaced', function() {
+            window.setTimeout(function() {
+              window.initBanner();
+              window.initDashboardPage();
+              window.initAboutSlider();
+              window.initBlog();
+              window.initLozad();
+              window.initPopup();
+              window.initMainNav();
+              window.initHeader();
+              window.initSearch();
+              window.initAOS();
+              window.initProductPage();
+              window.initCartPage();
+              window.initBillingProfile();
+              window.initSelects();
+              window.initFilters();
+              window.initProductCards();
+              window.initPagination();
+              window.initShare();
+              window.initForms();
+              window.initProfile();
+            }, 1000);
+          });
+      else
+        script.
+          window.initBanner();
+          window.initLozad();
+          window.initHeader();
+
+          window.setTimeout(function() {
+            window.initAboutSlider();
+            window.initBlog();
+            window.initDashboardPage();
+            window.initCatalogNav();
+            window.initMobileNav();
+            window.initPopup();
+            window.initMainNav();
+            window.initSearch();
+            window.initAOS();
+            window.initProductPage();
+            window.initCartPage();
+            window.initBillingProfile();
+            window.initSelects();
+            window.initFilters();
+            window.initProductCards();
+            window.initPagination();
+            window.initShare();
+            window.initForms();
+            window.initProfile();
+          }, 2000);
+
+          var swup = new Swup({
+            linkSelector: 'a[href^="' + window.location.origin + '"]:not([data-no-swup]), a[href^="/"]:not([data-no-swup]), a[href^="./"]:not([data-no-swup]), a[href^="../"]:not([data-no-swup]), a[href^="#"]:not([data-no-swup])',
+            containers: ['#swup-main', '#swup-header', '#swup-mobile-nav', '#swup-footer', '#swup-overlay'],
+            plugins: [new SwupScrollPlugin(), new SwupBodyClassPlugin()]
+          });
+
+          swup.on('contentReplaced', function() {
+            window.setTimeout(function() {
+              window.initBanner();
+              window.initDashboardPage();
+              window.initAboutSlider();
+              window.initBlog();
+              window.initLozad();
+              window.initHeader();
+              window.initMobileNav();
+              window.initCatalogNav();
+              window.initPopup();
+              window.initMainNav();
+              window.initSearch();
+              window.initAOS();
+              window.initProductPage();
+              window.initCartPage();
+              window.initBillingProfile();
+              window.initSelects();
+              window.initFilters();
+              window.initProductCards();
+              window.initPagination();
+              window.initShare();
+              window.initForms();
+              window.initProfile();
+            }, 1000);
+          });

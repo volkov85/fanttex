@@ -1,0 +1,84 @@
+mixin product-card(options={})
+  -
+    let {
+      counter = 1,
+      name = 'Футер 3х-нитка, петля-диагональ, пенье',
+      id = '01.139.04',
+      price = '378.95',
+      priceSale = false,
+      imagesQuantity = 3,
+      unit = 'м',
+      variantsQuantity = 10,
+      variantSelected = 3,
+      isOutOfStock = false,
+      isInCart = false,
+      isFavorite = false,
+      isNew = false,
+      discount = false,
+      hasAOS = true,
+      hasLazyLoad = true
+    } = options;
+
+  include blocks/product-card
+
+mixin product-variant(options={})
+  -
+    let {
+      counter = 1,
+      name = 'Белый, Молочный',
+      imagesQuantity = 3,
+      unit = 'м',
+      isOutOfStock = false,
+      isInCart = false,
+      isFavorite = false,
+      isNew = false,
+      discount = false,
+      isInPopup = false
+    } = options;
+
+  include blocks/product-variant
+
+mixin product-cart(options={})
+  -
+    let {
+      name = 'Футер 3х-нитка, петля-диагональ',
+      id = '01.125.00-02',
+      color = 'Бежевый, Телесный',
+      price = '40 030.00',
+      isSample = false
+    } = options;
+
+  include blocks/product-cart
+
+mixin filters(filtersShow='all')
+  include blocks/filters
+
+mixin pagination(options={})
+  -
+    let {
+      pageActive = 1,
+      isShown = false
+    } = options;
+
+  include blocks/pagination
+
+mixin order(options={})
+  -
+    let {
+      status = 'processing',
+      productsQuantity = 4
+    } = options;
+
+  include blocks/order
+
+mixin blog-preview(options={})
+  -
+    let {
+      hasAOS = true,
+      hasLazyLoad = true
+    } = options;
+
+  include blocks/blog-preview
+
+mixin popup(variant)
+  include blocks/popup

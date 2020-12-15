@@ -1,0 +1,49 @@
+.inner-form {
+  max-width: 570px;
+}
+
+.inner-form__title {
+  margin-bottom: 25px;
+
+  h2 {
+    margin: 0;
+    line-height: $lineHeightMedium;
+  }
+
+  p {
+    margin: 0;
+    line-height: $lineHeightMedium;
+  }
+}
+
+.inner-form__fields {
+  margin-top: 30px;
+}
+
+.inner-form__field {
+  margin-bottom: 10px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.inner-form__checks {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.inner-form__check {
+  margin-bottom: 10px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.inner-form__buttons {
+  margin-top: 20px;
+}

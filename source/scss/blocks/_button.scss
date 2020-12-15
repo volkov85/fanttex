@@ -1,0 +1,85 @@
+.button {
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 25px 20px;
+  width: 100%;
+  max-width: 270px;
+  min-height: 72px;
+  font-weight: $fontBold;
+  font-size: $fontTextLarge;
+  line-height: $lineHeightNormal;
+  vertical-align: middle;
+  text-align: center;
+  color: $fontColorProductId;
+  background-color: $ColorInput;
+  border: none;
+  transition: box-shadow 0.3s;
+  cursor: pointer;
+  appearance: none;
+
+  &--small {
+    min-height: 36px;
+    padding: 10px;
+    font-size: $fontTextRegular;
+  }
+
+  &--medium {
+    min-height: 50px;
+    padding: 14px;
+  }
+
+  &:hover,
+  &:focus {
+    box-shadow:
+      inset 0 0 20px rgba($ColorPrimary, 0.2),
+      0 0 9px 1px $ColorShadow;
+    outline: none;
+  }
+
+  &--final {
+    color: $ColorPrimary;
+    background-color: $ColorButtonGreen;
+
+    &:hover,
+    &:focus {
+      box-shadow:
+        inset 0 0 20px rgba($ColorPrimary, 0.2),
+        0 0 9px 1px rgba($ColorButtonGreen, 0.5);
+    }
+  }
+
+  &--selection {
+    color: $ColorPrimary;
+    background-color: $ColorButtonOrange;
+
+    &:hover,
+    &:focus {
+      box-shadow:
+        inset 0 0 20px rgba($ColorPrimary, 0.2),
+        0 0 9px 1px rgba($ColorButtonOrange, 0.5);
+    }
+  }
+
+  &--cancel {
+    color: $ColorPrimary;
+    background-color: $ColorButtonRed;
+
+    &:hover,
+    &:focus {
+      box-shadow:
+        inset 0 0 20px rgba($ColorPrimary, 0.2),
+        0 0 9px 1px rgba($ColorButtonRed, 0.5);
+    }
+  }
+
+  &--callback {
+    max-width: 410px;
+    color: $ColorPrimary;
+    background-color: $ColorProductStatusNew;
+
+    &:hover,
+    &:focus {
+      box-shadow: none;
+    }
+  }
+}

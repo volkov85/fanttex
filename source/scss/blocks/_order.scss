@@ -1,0 +1,123 @@
+.order {
+  display: none;
+  box-sizing: border-box;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 30px;
+  padding-right: 25px;
+  background-color: $ColorPrimary;
+  border: 1px solid $ColorBorderGrey;
+
+  &.shown {
+    display: block;
+    animation: 0.4s both fade-in;
+  }
+}
+
+.order__title {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-weight: $fontSemiBold;
+  font-size: $fontTextRegular;
+  line-height: $lineHeightNormal;
+}
+
+.order__inner {
+  display: flex;
+  justify-content: space-between;
+}
+
+.order__table {
+  width: 430px;
+  border-collapse: collapse;
+  border-spacing: 0;
+  table-layout: fixed;
+
+  td {
+    font-size: $fontTextSmall;
+    line-height: $lineHeightTextMedium;
+    color: $fontColorGrey;
+  }
+
+  @media (min-width: $widthDesktop) {
+    width: 730px;
+  }
+
+  @media (min-width: $widthDesktopWide) {
+    width: 1030px;
+  }
+}
+
+.order__item-name {
+  width: auto;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.order__item-amount {
+  width: 58px;
+  text-align: center;
+
+  @media (min-width: $widthDesktop) {
+    width: 98px;
+  }
+
+  @media (min-width: $widthDesktopWide) {
+    width: 128px;
+  }
+}
+
+.order__item-price {
+  width: 102px;
+  text-align: right;
+
+  @media (min-width: $widthDesktop) {
+    width: 122px;
+  }
+
+  @media (min-width: $widthDesktopWide) {
+    width: 152px;
+  }
+}
+
+.order__links {
+  @extend %list-reset;
+  width: 335px;
+
+  li {
+    font-weight: $fontSemiBold;
+    line-height: $lineHeightTextLarge;
+  }
+
+  a {
+    line-height: $lineHeightTextLarge;
+    color: inherit;
+
+    &:hover,
+    &:focus {
+      color: $ColorButtonOrange !important;
+      outline: none;
+    }
+  }
+}
+
+.order__status {
+  .order-status {
+    .order--processing & {
+      color: $ColorButtonOrange;
+    }
+
+    .order--finished & {
+      color: $ColorButtonGreen;
+    }
+
+    .order--canceled & {
+      color: $ColorRed;
+    }
+  }
+}
+
+.order__payment {
+  color: $ColorButtonGreen;
+}

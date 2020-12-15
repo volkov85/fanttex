@@ -1,0 +1,86 @@
+.billing-profile {
+  width: 470px;
+
+  &--dashboard {
+    display: flex;
+    justify-content: space-between;
+    width: auto;
+    min-height: 770px;
+    margin-top: 60px;
+    margin-bottom: 30px;
+  }
+}
+
+.billing-profile__select {
+  margin-bottom: 20px;
+
+  .billing-profile--dashboard & {
+    width: 420px;
+    margin-bottom: 0;
+
+    .select__list {
+      max-height: 770px;
+    }
+
+    .select__list-inner {
+      max-height: 696px;
+    }
+  }
+
+  @media (min-width: $widthDesktop) {
+    .billing-profile--dashboard & {
+      width: 570px;
+    }
+  }
+
+  @media (min-width: $widthDesktopWide) {
+    .billing-profile--dashboard & {
+      width: 720px;
+    }
+  }
+}
+
+.billing-profile__form {
+  margin-bottom: 30px;
+
+  .billing-profile--dashboard & {
+    width: 420px;
+    margin-top: 90px;
+    margin-bottom: 0;
+  }
+
+  @media (min-width: $widthDesktop) {
+    margin-bottom: 0;
+
+    .billing-profile--dashboard & {
+      width: 570px;
+    }
+  }
+
+  @media (min-width: $widthDesktopWide) {
+    .billing-profile--dashboard & {
+      width: 720px;
+    }
+  }
+}
+
+.billing-profile__toggles {
+  display: flex;
+  flex-wrap: wrap;
+  width: calc(100% + 10px);
+  margin-left: -5px;
+}
+
+.billing-profile__toggle {
+  margin-right: 5px;
+  margin-bottom: 10px;
+  margin-left: 5px;
+}
+
+.billing-profile__form-field {
+  margin-bottom: 10px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

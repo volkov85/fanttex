@@ -1,0 +1,23 @@
+.cart-form {
+  width: 270px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.cart-form__col {
+  width: 270px;
+}
+
+.cart-form__toggles {
+  display: flex;
+  flex-wrap: wrap;
+  width: calc(100% + 10px);
+  margin-left: -5px;
+}
+
+.cart-form__toggle {
+  margin-right: 5px;
+  margin-bottom: 10px;
+  margin-left: 5px;
+  white-space: nowrap;
+}

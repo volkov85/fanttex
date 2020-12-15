@@ -1,0 +1,74 @@
+// Подключаем стили Google-шрифтов
+@import "https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap";
+
+// Подключаем стили сторонних библиотек
+@import "../../node_modules/swiper/swiper-bundle";
+@import "../../node_modules/aos/dist/aos";
+@import "../../photoswipe/dist/photoswipe";
+@import "../../photoswipe/dist/default-skin/default-skin";
+
+// Подключаем Normalize
+@import "normalize";
+
+// Подключаем переменные, функции и миксины
+@import "misc/variables", "misc/functions", "misc/mixins";
+
+// Подключаем шрифты
+@import "misc/fonts";
+
+// Подключаем шаблонные и вспомогательные классы
+@import "misc/extends", "blocks/visually-hidden", "blocks/container";
+
+// Подключаем анимацию
+@import "misc/animations";
+
+// Подключаем основные стили
+@import "misc/base", "blocks/page", "blocks/button", "blocks/breadcrumbs", "blocks/overlay";
+
+// Подключаем стили шапки
+@import "blocks/header", "blocks/logo", "blocks/search";
+
+// Подключаем стили навигации
+@import "blocks/main-nav", "blocks/page-nav", "blocks/menu-main", "blocks/menu-profile", "blocks/menu-categories", "blocks/menu-catalog";
+
+// Подключаем стили социальных кнопок
+@import "blocks/social", "blocks/share";
+
+// Подключаем стили баннеров
+@import "blocks/banners", "blocks/banner";
+
+// Подключаем стили фильтров
+@import "blocks/filters", "blocks/select", "blocks/toggle", "blocks/selection";
+
+// Подключаем стили каталога
+@import "blocks/catalog", "blocks/product-card", "blocks/product-variant", "blocks/product-amount";
+
+// Подключаем стили форм
+@import "blocks/form-section", "blocks/callback", "blocks/ask-question", "blocks/inner-form";
+
+// Подключаем стили блока текстового контента
+@import "blocks/content";
+
+// Подключаем стили блока товара
+@import "blocks/product";
+
+// Подключаем стили личного кабинета
+@import "blocks/dashboard", "blocks/dashboard-panel", "blocks/order", "blocks/order-cancel", "blocks/profile";
+
+// Подключаем стили пагинации
+@import "blocks/pagination";
+
+// Подключаем стили блока корзины
+@import "blocks/cart", "blocks/product-cart", "blocks/cart-form", "blocks/billing-profile";
+
+// Подключаем стили страниц блога
+@import "blocks/blog", "blocks/blog-preview", "blocks/blog-post", "blocks/blog-tags";
+
+// Подключаем стили внутренних страниц
+@import "blocks/about", "blocks/inner-page";
+
+// Подключаем стили подвала
+@import "blocks/footer";
+
+// Подключаем стили всплывающих окон
+@import "blocks/popup", "blocks/popup-form";

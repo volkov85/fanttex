@@ -1,0 +1,24 @@
+.page {
+  min-width: $widthMobile;
+  margin: 0;
+  padding-bottom: 72px;
+  overflow: hidden auto;
+  font: #{$fontTextRegular}/#{$lineHeightHuge} $fontBase;
+  color: $fontColorMaintext;
+  background-color: $ColorPrimary;
+  -webkit-overflow-scrolling: touch;
+  -webkit-tap-highlight-color: transparent;
+
+  &--catalog {
+    h1 {
+      margin-bottom: 17px;
+    }
+  }
+
+  &--block {
+    position: fixed;
+    right: 0;
+    left: 0;
+    overflow: hidden !important;
+  }
+}

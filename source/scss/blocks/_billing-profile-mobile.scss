@@ -1,0 +1,49 @@
+.billing-profile {
+  width: 270px;
+
+  &--dashboard {
+    display: flex;
+    flex-direction: column;
+    margin: 60px auto 30px;
+  }
+}
+
+.billing-profile__select {
+  margin-bottom: 20px;
+
+  .billing-profile--dashboard & {
+    width: 270px;
+    margin-bottom: 0;
+  }
+}
+
+.billing-profile__form {
+  margin-bottom: 30px;
+
+  .billing-profile--dashboard & {
+    width: 270px;
+    margin-top: 30px;
+    margin-bottom: 0;
+  }
+}
+
+.billing-profile__toggles {
+  display: flex;
+  flex-wrap: wrap;
+  width: calc(100% + 10px);
+  margin-left: -5px;
+}
+
+.billing-profile__toggle {
+  margin-right: 5px;
+  margin-bottom: 20px;
+  margin-left: 5px;
+}
+
+.billing-profile__form-field {
+  margin-bottom: 10px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

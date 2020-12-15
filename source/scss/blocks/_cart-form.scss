@@ -1,0 +1,27 @@
+.cart-form {
+  @media (min-width: $widthDesktop) {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.cart-form__col {
+  width: 370px;
+
+  @media (min-width: $widthDesktopWide) {
+    width: 670px;
+  }
+}
+
+.cart-form__toggles {
+  display: flex;
+  flex-wrap: wrap;
+  width: calc(100% + 10px);
+  margin-left: -5px;
+}
+
+.cart-form__toggle {
+  margin-right: 5px;
+  margin-bottom: 10px;
+  margin-left: 5px;
+}

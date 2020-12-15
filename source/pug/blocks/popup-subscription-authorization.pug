@@ -1,0 +1,52 @@
+section.popup-form
+  div.popup-form__wrapper(class="swiper-container")
+    div.popup-form__inner(class="swiper-wrapper")
+      div.popup-form__content(class="swiper-slide")
+        div.popup-form__top
+          button.popup-form__close(class="popup__close" type="button") Закрыть
+
+        form.inner-form(class="form" action="#" method="post")
+          div.inner-form__title
+            h2 Подпишитесь на новинки тканей
+            p и зарегистрируйтесь на сайте или <a class="popup-form__authorization" href="#" data-no-swup>войдите</a>
+
+          div.inner-form__fields
+            label.inner-form__field(class="form-field")
+              input(type="text" name="name" aria-label="Введите ваше имя" required)
+              span Имя
+            label.inner-form__field(class="form-field")
+              input(type="tel" name="phone" aria-label="Введите ваш телефон" required)
+              span Телефон
+            label.inner-form__field(class="form-field")
+              input(type="email" name="email" aria-label="Введите ваш e-mail" required)
+              span Почта
+
+          div.inner-form__checks
+            label.inner-form__check(class="form-check privacy filled")
+              input(type="checkbox" name="privacyAccepted" checked required)
+              span Я даю согласие на обработку персональных данных
+            label.inner-form__check(class="form-check sign-up filled")
+              input(type="checkbox" name="signUp" checked required)
+              span Зарегистрироваться на сайте одновременно с отправкой вопроса
+
+          div.inner-form__buttons
+            button.button(class="button--final popup-form__subscribe" type="submit") Подписаться
+
+      div.popup-form__content(class="swiper-slide")
+        div.popup-form__top
+          p.popup-form__close <button class="popup__close" type="button">Закрыть</button> или <a class="popup-form__subscription" href="#" data-no-swup>вернуться к регистрации</a>
+
+        form.inner-form(class="form" action="#" method="post")
+          div.inner-form__title
+            h2 Авторизация
+
+          div.inner-form__fields
+            label.inner-form__field(class="form-field")
+              input(type="email" name="email" aria-label="Введите ваш e-mail" required)
+              span Почта
+            label.inner-form__field(class="form-field")
+              input(type="password" name="password" aria-label="Введите ваш пароль" required)
+              span Пароль
+
+          div.inner-form__buttons
+            button.button(class="button--final popup-form__authorize" type="submit") Войти
